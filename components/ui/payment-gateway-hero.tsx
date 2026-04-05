@@ -162,7 +162,7 @@ function LogoWeChatPay() {
 /*  DATA                                                               */
 /* ------------------------------------------------------------------ */
 
-const ORBIT_RADIUS = 7.0;
+const ORBIT_RADIUS = 5.0;
 
 function orbitPos(index: number, total: number) {
   const angle = (index * 2 * Math.PI) / total - Math.PI / 2;
@@ -278,8 +278,8 @@ function LogoNode({
             alignItems: "center",
             justifyContent: "center",
             boxShadow: `0 0 14px 3px ${emissive}88, 0 2px 6px rgba(0,0,0,0.5)`,
-            minWidth: 60,
-            minHeight: 38,
+            minWidth: 54,
+            minHeight: 34,
           }}>
             <Logo />
           </div>
@@ -421,9 +421,9 @@ function Scene() {
 export function PaymentGatewayHero() {
   return (
     <div className="relative w-full flex flex-col items-center">
-      <div className="w-full" style={{ height: 440 }}>
+      <div className="w-full relative" style={{ height: 440, overflow: "hidden" }}>
         <Canvas
-          camera={{ position: [0, 6, 20], fov: 52 }}
+          camera={{ position: [0, 3.5, 16], fov: 46 }}
           dpr={[1, 1.5]}
           gl={{ antialias: true, powerPreference: "default" }}
         >
