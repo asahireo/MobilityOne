@@ -8,6 +8,7 @@ import { useRef } from "react";
 import Nav from "@/components/ui/nav";
 import Footer from "@/components/ui/footer";
 import { GlobeInteractive } from "@/components/ui/globe-interactive";
+import { PaymentGatewayHero } from "@/components/ui/payment-gateway-hero";
 
 /* ------------------------------------------------------------------ */
 /*  TYPES                                                              */
@@ -33,6 +34,7 @@ export interface SolutionPageData {
   subtext: string;
   heroImage?: string;
   heroGlobe?: boolean;
+  heroVariant?: "payment-terminal";
   features: SolutionFeature[];
   partners?: { label: string; names: string[] };
   whitelabelPartners?: SolutionPartner[];
@@ -55,7 +57,7 @@ const stagger = {
 };
 
 function PageHero({ data }: { data: SolutionPageData }) {
-  const hasRight = !!(data.heroImage || data.heroGlobe);
+  const hasRight = !!(data.heroImage || data.heroGlobe || data.heroVariant);
 
   return (
     <section className="relative z-10 mx-auto w-full max-w-7xl px-6 pb-20 pt-8 md:px-10 md:pb-32 md:pt-16">
@@ -121,6 +123,18 @@ function PageHero({ data }: { data: SolutionPageData }) {
             )}
           </motion.div>
         </motion.div>
+
+        {/* Right — custom hero */}
+        {data.heroVariant === "payment-terminal" && (
+          <motion.div
+            initial={{ opacity: 0, scale: 0.94, y: 20 }}
+            animate={{ opacity: 1, scale: 1, y: 0 }}
+            transition={{ duration: 0.9, delay: 0.25, ease: heroEase }}
+            className="relative flex items-center justify-center"
+          >
+            <PaymentGatewayHero />
+          </motion.div>
+        )}
 
         {/* Right — image */}
         {data.heroImage && (

@@ -14,7 +14,7 @@ const data: SolutionPageData = {
   headlineAccent: "TERMINALS",
   subtext:
     "Our state-of-the-art payment terminal solution supports a wide range of payment methods, offering your customers a fast, secure, and seamless checkout experience. Fully customizable for retail, restaurants, government, and service-based businesses.",
-  heroImage: "/assets/img/payment_terminal_v2.png",
+  heroVariant: "payment-terminal",
   features: [
     {
       title: "Universal Card & eWallet Acceptance",
