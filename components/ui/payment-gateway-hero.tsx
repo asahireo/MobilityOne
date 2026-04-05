@@ -162,7 +162,7 @@ function LogoWeChatPay() {
 /*  DATA                                                               */
 /* ------------------------------------------------------------------ */
 
-const ORBIT_RADIUS = 5.0;
+const ORBIT_RADIUS = 4.6;
 
 function orbitPos(index: number, total: number) {
   const angle = (index * 2 * Math.PI) / total - Math.PI / 2;
@@ -221,19 +221,19 @@ function HubNode(// eslint-disable-next-line @typescript-eslint/no-explicit-any
 
   return (
     <group position={[0, BASE_Y, 0]}>
-      <RoundedBox ref={meshRef} args={[2.2, 2.2, 0.32]} radius={0.22} smoothness={4}>
+      <RoundedBox ref={meshRef} args={[2.6, 2.6, 0.4]} radius={0.26} smoothness={4}>
         <meshPhysicalMaterial
           color="#0f0f10"
           emissive="#fdd448"
-          emissiveIntensity={1.3}
-          roughness={0.15}
-          clearcoat={0.7}
+          emissiveIntensity={2.0}
+          roughness={0.1}
+          clearcoat={0.9}
         />
       </RoundedBox>
-      <Html center position={[0, 0, 0.22]} portal={portal}>
+      <Html center position={[0, 0, 0.22]} portal={portal} zIndexRange={[999, 0]}>
         <div style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: 5, pointerEvents: "none", userSelect: "none" }}>
-          <Zap size={34} color="#fdd448" strokeWidth={1.5} />
-          <span style={{ fontSize: 10, fontWeight: 800, letterSpacing: "0.18em", color: "#fdd448", opacity: 0.9, textTransform: "uppercase" }}>
+          <Zap size={38} color="#fdd448" strokeWidth={1.5} />
+          <span style={{ fontSize: 11, fontWeight: 900, letterSpacing: "0.2em", color: "#fdd448", opacity: 1, textTransform: "uppercase", textShadow: "0 0 20px #fdd448" }}>
             M1PAY
           </span>
         </div>
@@ -263,7 +263,7 @@ portal: any;
 
   return (
     <group ref={groupRef} position={[x, BASE_Y, z]}>
-      <Html center portal={portal}>
+      <Html center portal={portal} zIndexRange={[10, 0]}>
         <div style={{
           display: "flex",
           flexDirection: "column",
@@ -427,7 +427,7 @@ export function PaymentGatewayHero() {
     <div className="relative w-full flex flex-col items-center">
       <div ref={containerRef} className="w-full relative" style={{ height: 440, overflow: "hidden" }}>
         <Canvas
-          camera={{ position: [0, 3.5, 16], fov: 46 }}
+          camera={{ position: [0, 2.5, 15], fov: 48 }}
           dpr={[1, 1.5]}
           gl={{ antialias: true, powerPreference: "default" }}
         >
