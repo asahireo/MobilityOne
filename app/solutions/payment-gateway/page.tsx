@@ -14,7 +14,7 @@ const data: SolutionPageData = {
   headlineAccent: "M1PAY",
   subtext:
     "Our online and mobile payment gateway offers a seamless, secure, and versatile solution to manage transactions with ease. Designed to support a wide range of payment channels — enabling your customers to pay in the way that suits them best.",
-  heroImage: "/assets/img/payment_gateway_modern.png",
+  heroVariant: "payment-gateway",
   features: [
     {
       title: "Online Banking via FPX",
