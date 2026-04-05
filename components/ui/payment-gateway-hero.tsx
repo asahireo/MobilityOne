@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef, useMemo } from "react";
+import { useRef, useMemo, type RefObject } from "react";
 import { Canvas, useFrame } from "@react-three/fiber";
 import { RoundedBox, Html } from "@react-three/drei";
 import { EffectComposer, Bloom } from "@react-three/postprocessing";
@@ -210,7 +210,8 @@ const BASE_Y = 0;
 /*  HUB NODE                                                           */
 /* ------------------------------------------------------------------ */
 
-function HubNode() {
+function HubNode(// eslint-disable-next-line @typescript-eslint/no-explicit-any
+{ portal }: { portal: any }) {
   const meshRef = useRef<Mesh>(null);
 
   useFrame(({ clock }) => {
@@ -229,7 +230,7 @@ function HubNode() {
           clearcoat={0.7}
         />
       </RoundedBox>
-      <Html center position={[0, 0, 0.22]}>
+      <Html center position={[0, 0, 0.22]} portal={portal}>
         <div style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: 5, pointerEvents: "none", userSelect: "none" }}>
           <Zap size={34} color="#fdd448" strokeWidth={1.5} />
           <span style={{ fontSize: 10, fontWeight: 800, letterSpacing: "0.18em", color: "#fdd448", opacity: 0.9, textTransform: "uppercase" }}>
@@ -246,9 +247,10 @@ function HubNode() {
 /* ------------------------------------------------------------------ */
 
 function LogoNode({
-  index, emissive, label, Logo,
+  index, emissive, label, Logo, portal,
 }: {
-  index: number; emissive: string; label: string; Logo: () => React.JSX.Element;
+  index: number; emissive: string; label: string; Logo: () => React.JSX.Element; // eslint-disable-next-line @typescript-eslint/no-explicit-any
+portal: any;
 }) {
   const groupRef = useRef<Group>(null);
   const { x, z } = orbitPos(index, PAYMENT_METHODS.length);
@@ -261,7 +263,7 @@ function LogoNode({
 
   return (
     <group ref={groupRef} position={[x, BASE_Y, z]}>
-      <Html center>
+      <Html center portal={portal}>
         <div style={{
           display: "flex",
           flexDirection: "column",
@@ -384,12 +386,12 @@ function DataPulses() {
 /*  SCENE                                                              */
 /* ------------------------------------------------------------------ */
 
-function Scene() {
+function Scene(// eslint-disable-next-line @typescript-eslint/no-explicit-any
+{ portal }: { portal: any }) {
   const groupRef = useRef<Group>(null);
 
   useFrame(({ clock }) => {
     if (!groupRef.current) return;
-    // Continuous slow rotation — logos appear to orbit the hub
     groupRef.current.rotation.y = clock.getElapsedTime() * 0.08;
   });
 
@@ -399,10 +401,10 @@ function Scene() {
       <pointLight color="#fdd448" intensity={5} distance={22} decay={2} position={[0, 3, 2]} />
       <pointLight color="#ffffff" intensity={0.5} distance={30} decay={2} position={[0, 8, 5]} />
 
-      <HubNode />
+      <HubNode portal={portal} />
 
       {PAYMENT_METHODS.map((m, i) => (
-        <LogoNode key={m.id} index={i} emissive={m.emissive} label={m.label} Logo={m.Logo} />
+        <LogoNode key={m.id} index={i} emissive={m.emissive} label={m.label} Logo={m.Logo} portal={portal} />
       ))}
 
       {CONNECTIONS.map((conn, i) => (
@@ -419,16 +421,18 @@ function Scene() {
 /* ------------------------------------------------------------------ */
 
 export function PaymentGatewayHero() {
+  const containerRef = useRef<HTMLDivElement>(null);
+
   return (
     <div className="relative w-full flex flex-col items-center">
-      <div className="w-full relative" style={{ height: 440, overflow: "hidden" }}>
+      <div ref={containerRef} className="w-full relative" style={{ height: 440, overflow: "hidden" }}>
         <Canvas
           camera={{ position: [0, 3.5, 16], fov: 46 }}
           dpr={[1, 1.5]}
           gl={{ antialias: true, powerPreference: "default" }}
         >
           <color attach="background" args={["#070506"]} />
-          <Scene />
+          <Scene portal={containerRef} />
           <EffectComposer>
             <Bloom
               intensity={1.0}
