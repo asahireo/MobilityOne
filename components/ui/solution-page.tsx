@@ -10,6 +10,7 @@ import Footer from "@/components/ui/footer";
 import { GlobeInteractive } from "@/components/ui/globe-interactive";
 import { PaymentGatewayHero } from "@/components/ui/payment-gateway-hero";
 import { PaymentTerminalHero } from "@/components/ui/payment-terminal-hero";
+import { EMoneyHero } from "@/components/ui/emoney-hero";
 
 /* ------------------------------------------------------------------ */
 /*  TYPES                                                              */
@@ -35,7 +36,7 @@ export interface SolutionPageData {
   subtext: string;
   heroImage?: string;
   heroGlobe?: boolean;
-  heroVariant?: "payment-terminal" | "payment-gateway";
+  heroVariant?: "payment-terminal" | "payment-gateway" | "e-money";
   features: SolutionFeature[];
   partners?: { label: string; names: string[] };
   whitelabelPartners?: SolutionPartner[];
@@ -134,6 +135,18 @@ function PageHero({ data }: { data: SolutionPageData }) {
             className="relative flex items-center justify-center"
           >
             <PaymentTerminalHero />
+          </motion.div>
+        )}
+
+        {/* Right — e-money hero */}
+        {data.heroVariant === "e-money" && (
+          <motion.div
+            initial={{ opacity: 0, scale: 0.94, y: 20 }}
+            animate={{ opacity: 1, scale: 1, y: 0 }}
+            transition={{ duration: 0.9, delay: 0.25, ease: heroEase }}
+            className="relative flex items-center justify-center"
+          >
+            <EMoneyHero />
           </motion.div>
         )}
 

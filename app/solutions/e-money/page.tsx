@@ -14,7 +14,7 @@ const data: SolutionPageData = {
   headlineAccent: "TRUST",
   subtext:
     "Our e-Money platform is fully approved by Mastercard and recognized by Bank Negara Malaysia (BNM). Built to drive financial inclusion, promote digital payments, and support targeted communities through secure, cashless transactions.",
-  heroImage: "/assets/img/emoney_modern.png",
+  heroVariant: "e-money",
   features: [
     {
       title: "Card-Based & QR Payments",
