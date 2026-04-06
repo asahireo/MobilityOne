@@ -10,6 +10,7 @@ import Image from "next/image";
 import Link from "next/link";
 import Nav from "@/components/ui/nav";
 import Footer from "@/components/ui/footer";
+import { assetPath } from "@/lib/asset-path";
 
 /* ------------------------------------------------------------------ */
 /*  DATA                                                               */
@@ -286,7 +287,7 @@ function OfficeCta() {
           <div className="relative overflow-hidden rounded-[2.5rem] border border-white/10 bg-white/[0.04] p-1">
             <div className="relative aspect-[4/3] overflow-hidden rounded-[2.2rem]">
               <Image
-                src="/assets/img/HqM1.png"
+                src={assetPath("/assets/img/HqM1.png")}
                 alt="MobilityOne Headquarters"
                 fill
                 className="object-cover"

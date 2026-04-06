@@ -5,6 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 import Nav from "@/components/ui/nav";
 import Footer from "@/components/ui/footer";
+import { assetPath } from "@/lib/asset-path";
 
 const articles = [
   {
@@ -13,7 +14,7 @@ const articles = [
     date: "Feb 14, 2025",
     excerpt:
       "School supplies assistance to selected children in cooperation with the National Anti Drugs Agency (AADK) Negeri Sembilan at Hari Hari Clothing Center Senawang.",
-    image: "/assets/img/news1.jpg",
+    image: assetPath("/assets/img/news1.jpg"),
   },
   {
     title: "M1 Career Fair",
@@ -21,7 +22,7 @@ const articles = [
     date: "Feb 27, 2025",
     excerpt:
       "MobilityOne joined MyFutureJobs Career Fair at Royal Chulan Damansara, connecting with Malaysia's next generation of fintech talent.",
-    image: "/assets/img/news2.jpg",
+    image: assetPath("/assets/img/news2.jpg"),
   },
   {
     title: "MiPAY New Facelift",
@@ -29,7 +30,7 @@ const articles = [
     date: "Oct 29, 2024",
     excerpt:
       "MiPAY receives a fresh new look for a better user experience — improved UI, faster performance, and exciting new features.",
-    image: "/assets/img/news3.png",
+    image: assetPath("/assets/img/news3.png"),
   },
 ];
 

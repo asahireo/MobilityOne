@@ -21,6 +21,7 @@ import ThreeDMarquee from "@/components/ui/three-d-marquee";
 import Nav from "@/components/ui/nav";
 import Footer from "@/components/ui/footer";
 import SpinningBadge from "@/components/ui/spinning-badge";
+import { assetPath } from "@/lib/asset-path";
 
 /* ------------------------------------------------------------------ */
 /*  Decorative SVGs                                                    */
@@ -397,34 +398,34 @@ function BigStats() {
 /* ------------------------------------------------------------------ */
 
 const partnerLogos = [
-  "/assets/img/clients/Maybank-client.png",
-  "/assets/img/clients/Rhb-client.png",
-  "/assets/img/clients/agro.png",
-  "/assets/img/clients/ambank.png",
-  "/assets/img/clients/bislam.png",
-  "/assets/img/clients/bsn.png",
-  "/assets/img/clients/celcomdigi.png",
-  "/assets/img/clients/maxis.png",
-  "/assets/img/clients/mbsb-client.png",
-  "/assets/img/clients/muamalat.png",
-  "/assets/img/clients/public.png",
-  "/assets/img/clients/rakyat.png",
-  "/assets/img/clients/umobile.png",
-  "/assets/img/clients/yes.png",
-  "/assets/img/clients/onexox.png",
-  "/assets/img/clients/redone.png",
-  "/assets/img/clients/tranglo.png",
-  "/assets/img/clients/moneygram.png",
-  "/assets/img/clients/mastercard.png",
-  "/assets/img/clients/visa.png",
-  "/assets/img/clients/fpx.png",
-  "/assets/img/clients/boost.png",
-  "/assets/img/clients/tng.png",
-  "/assets/img/clients/grabpay.png",
-  "/assets/img/clients/duitnow.png",
-  "/assets/img/clients/shopeepay.png",
-  "/assets/img/clients/mydebit.png",
-  "/assets/img/clients/bni.png",
+  assetPath("/assets/img/clients/Maybank-client.png"),
+  assetPath("/assets/img/clients/Rhb-client.png"),
+  assetPath("/assets/img/clients/agro.png"),
+  assetPath("/assets/img/clients/ambank.png"),
+  assetPath("/assets/img/clients/bislam.png"),
+  assetPath("/assets/img/clients/bsn.png"),
+  assetPath("/assets/img/clients/celcomdigi.png"),
+  assetPath("/assets/img/clients/maxis.png"),
+  assetPath("/assets/img/clients/mbsb-client.png"),
+  assetPath("/assets/img/clients/muamalat.png"),
+  assetPath("/assets/img/clients/public.png"),
+  assetPath("/assets/img/clients/rakyat.png"),
+  assetPath("/assets/img/clients/umobile.png"),
+  assetPath("/assets/img/clients/yes.png"),
+  assetPath("/assets/img/clients/onexox.png"),
+  assetPath("/assets/img/clients/redone.png"),
+  assetPath("/assets/img/clients/tranglo.png"),
+  assetPath("/assets/img/clients/moneygram.png"),
+  assetPath("/assets/img/clients/mastercard.png"),
+  assetPath("/assets/img/clients/visa.png"),
+  assetPath("/assets/img/clients/fpx.png"),
+  assetPath("/assets/img/clients/boost.png"),
+  assetPath("/assets/img/clients/tng.png"),
+  assetPath("/assets/img/clients/grabpay.png"),
+  assetPath("/assets/img/clients/duitnow.png"),
+  assetPath("/assets/img/clients/shopeepay.png"),
+  assetPath("/assets/img/clients/mydebit.png"),
+  assetPath("/assets/img/clients/bni.png"),
 ];
 
 function Partners() {

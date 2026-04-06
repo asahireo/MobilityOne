@@ -6,6 +6,9 @@ const repoName = "MobilityOne";
 
 const nextConfig: NextConfig = {
   output: "export",
+  env: {
+    NEXT_PUBLIC_BASE_PATH: isGitHubPages ? `/${repoName}` : "",
+  },
   images: {
     unoptimized: true,
   },

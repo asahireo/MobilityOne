@@ -6,6 +6,7 @@ import Image from "next/image";
 import Link from "next/link";
 import Nav from "@/components/ui/nav";
 import Footer from "@/components/ui/footer";
+import { assetPath } from "@/lib/asset-path";
 
 /* ------------------------------------------------------------------ */
 /*  DATA                                                               */
@@ -36,21 +37,21 @@ const offices = [
   {
     name: "Corporate Office",
     address: "Wisma LMS,\nNo. 6, Jalan Abdul Rahman Idris,\nKg Baru, 53000 Kuala Lumpur, Malaysia.",
-    image: "/assets/img/HqM1.png",
+    image: assetPath("/assets/img/HqM1.png"),
     mapSrc:
       "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3984.1774027768793!2d101.6887931734891!3d3.047102953774553!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31cc4abbeac41445%3A0x72b12b6785e236e!2sMobilityone%20Sdn%20Bhd!5e0!3m2!1sen!2smy!4v1736837878576!5m2!1sen!2smy",
   },
   {
     name: "Business & Development Office",
     address: "2-3, Incubator 2,\nTechnology Park Malaysia, Bukit Jalil,\n57000 Kuala Lumpur, Malaysia.",
-    image: "/assets/img/TpmM1.png",
+    image: assetPath("/assets/img/TpmM1.png"),
     mapSrc:
       "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15936.709691105314!2d101.68106836109176!3d3.047097550858978!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31cc4abbeac41445%3A0x72b12b6785e236e!2sMobilityone%20Sdn%20Bhd!5e0!3m2!1sen!2smy!4v1738834411795!5m2!1sen!2smy",
   },
   {
     name: "Subsidiary Office",
     address: "Unit-03A, Level 11, Tower B,\nThe Vertical Business Suite,\n8, Jalan Kerinchi, Bangsar South,\n59200 Kuala Lumpur.",
-    image: "/assets/img/M1recep2.png",
+    image: assetPath("/assets/img/M1recep2.png"),
     mapSrc:
       "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3983.9397284513498!2d101.66314197583033!3d3.110649396864899!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31cc4b2e4835c46b%3A0x4863a14e6b1b8332!2sHATI%20International%20Sdn%20Bhd!5e0!3m2!1sen!2smy!4v1745830545750!5m2!1sen!2smy",
   },

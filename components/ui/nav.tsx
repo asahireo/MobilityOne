@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import Image from "next/image";
+import { assetPath } from "@/lib/asset-path";
 
 const navLinks = [
   { label: "Payment Terminal", href: "/solutions/payment-terminal" },
@@ -16,7 +17,7 @@ export default function Nav() {
     <nav className="relative z-20 mx-auto flex w-full max-w-[1440px] items-center justify-between px-6 py-6 md:px-10 md:py-8">
       <Link href="/" className="flex items-center">
         <Image
-          src="/assets/img/m1-mark.svg"
+          src={assetPath("/assets/img/m1-mark.svg")}
           alt="MobilityOne"
           width={48}
           height={48}
