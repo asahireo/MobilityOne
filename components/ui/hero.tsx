@@ -166,7 +166,7 @@ function ThreeDShowcase() {
   return (
     <section id="solutions" className="relative z-10 mx-auto w-full max-w-7xl px-6 py-20 md:px-10 md:py-32">
       <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.7 }}
-        className="overflow-hidden rounded-[2.5rem] border border-white/10 bg-white/[0.04] shadow-[0_30px_80px_rgba(0,0,0,0.35)]">
+        className="">
         <div className="grid items-center gap-0 lg:grid-cols-[1fr_1fr]">
           <div className="relative h-[24rem] overflow-hidden lg:h-[36rem]">
             <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(253,212,72,0.15),transparent_60%)]" />

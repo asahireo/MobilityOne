@@ -2,25 +2,26 @@
 
 import React, { useMemo, useRef } from "react";
 import { Canvas, useFrame } from "@react-three/fiber";
-import { OrbitControls } from "@react-three/drei";
+import { Html, OrbitControls } from "@react-three/drei";
 import { Bloom, EffectComposer } from "@react-three/postprocessing";
 import * as THREE from "three";
+import { assetPath } from "@/lib/asset-path";
 
 type SeededRandom = () => number;
 
 const SCENE_COLORS = {
-  background: "#070506",
-  fog: "#12070a",
-  ground: "#14080b",
-  grid: "#6e1a24",
-  supportBase: "#2a0c12",
-  supportGlow: "#74202c",
-  ruby: "#7d101c",
-  crimson: "#a11624",
-  ember: "#ff6a2a",
-  amber: "#ff9c3a",
-  coral: "#ff5a4f",
-  glow: "#ffe2d2",
+  background: "#050607",
+  fog: "#080a05",
+  ground: "#090b05",
+  grid: "#2a3a0a",
+  supportBase: "#0f1a04",
+  supportGlow: "#839344",
+  ruby: "#2a3d10",
+  crimson: "#4a6020",
+  ember: "#fdd448",
+  amber: "#e8bd21",
+  coral: "#9ba86c",
+  glow: "#fdf5c8",
 } as const;
 
 function createSeededRandom(initialSeed: number): SeededRandom {
@@ -203,7 +204,7 @@ function NodeMarkers() {
     <instancedMesh ref={meshRef} args={[undefined, undefined, sources.length]}>
       <sphereGeometry args={[0.14, 10, 10]} />
       <meshStandardMaterial
-        color="#1a0807"
+        color="#0a0f02"
         emissive={SCENE_COLORS.ember}
         emissiveIntensity={3.8}
       />
@@ -270,7 +271,7 @@ function DataPulses() {
   return (
     <instancedMesh ref={meshRef} args={[undefined, undefined, pulseData.length]}>
       <sphereGeometry args={[0.15, 10, 10]} />
-      <meshStandardMaterial color="#110606" emissive={SCENE_COLORS.ember} emissiveIntensity={4.6} />
+      <meshStandardMaterial color="#080c02" emissive={SCENE_COLORS.ember} emissiveIntensity={4.6} />
     </instancedMesh>
   );
 }
@@ -279,7 +280,6 @@ function CoreMonolith() {
   const monolithRef = useRef<THREE.Mesh>(null);
   const orbitRef = useRef<THREE.Mesh>(null);
   const rippleRef = useRef<THREE.Mesh<THREE.RingGeometry, THREE.MeshBasicMaterial>>(null);
-  const accentPlateRef = useRef<THREE.Mesh>(null);
 
   useFrame(({ clock }) => {
     const time = clock.getElapsedTime();
@@ -300,10 +300,6 @@ function CoreMonolith() {
       rippleRef.current.material.opacity = 0.24 + (Math.sin(time * 1.1) * 0.5 + 0.5) * 0.16;
     }
 
-    if (accentPlateRef.current) {
-      accentPlateRef.current.rotation.y = -time * 0.12;
-      accentPlateRef.current.position.y = 2.1 + Math.sin(time * 0.65) * 0.05;
-    }
   });
 
   return (
@@ -311,7 +307,7 @@ function CoreMonolith() {
       <mesh receiveShadow>
         <cylinderGeometry args={[2.8, 3.4, 0.1, 48]} />
         <meshStandardMaterial
-          color="#18070c"
+          color="#0d1404"
           emissive={SCENE_COLORS.crimson}
           emissiveIntensity={0.7}
           roughness={0.4}
@@ -322,7 +318,7 @@ function CoreMonolith() {
       <mesh position={[0, 0.06, 0]}>
         <cylinderGeometry args={[1.65, 1.95, 0.05, 40]} />
         <meshStandardMaterial
-          color="#21080d"
+          color="#141e05"
           emissive={SCENE_COLORS.ember}
           emissiveIntensity={1.8}
           roughness={0.2}
@@ -343,23 +339,19 @@ function CoreMonolith() {
           emissive={SCENE_COLORS.crimson}
           emissiveIntensity={0.35}
         />
+        <Html center position={[0, 0.2, 0.62]}>
+          <div style={{ pointerEvents: "none", userSelect: "none", width: 90, height: 50, filter: "drop-shadow(0 0 10px #fdd448)" }}>
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img src={assetPath("/assets/img/m1-mark.svg")} alt="M1" style={{ width: "100%", height: "100%", objectFit: "contain" }} />
+          </div>
+        </Html>
       </mesh>
 
-      <mesh ref={accentPlateRef} position={[0, 2.1, 0]} rotation={[0, 0.25, 0.08]}>
-        <torusGeometry args={[1.9, 0.03, 10, 90, Math.PI * 1.2]} />
-        <meshStandardMaterial
-          color="#26090e"
-          emissive={SCENE_COLORS.ember}
-          emissiveIntensity={1.8}
-          transparent
-          opacity={0.95}
-        />
-      </mesh>
 
       <mesh ref={orbitRef} position={[0, 2.9, 0]} rotation={[Math.PI / 2.6, 0, 0.45]}>
         <torusGeometry args={[3.45, 0.045, 10, 120]} />
         <meshStandardMaterial
-          color="#21080b"
+          color="#0f1803"
           emissive={SCENE_COLORS.amber}
           emissiveIntensity={2.8}
           transparent
@@ -427,7 +419,7 @@ export default function FluidGlass(props: FluidGlassProps) {
 
         <ambientLight intensity={0.16} />
         <directionalLight position={[16, 22, 10]} intensity={0.55} color={SCENE_COLORS.glow} />
-        <directionalLight position={[-14, 10, -10]} intensity={0.3} color={SCENE_COLORS.crimson} />
+        <directionalLight position={[-14, 10, -10]} intensity={0.3} color={SCENE_COLORS.coral} />
         <directionalLight position={[0, 8, 18]} intensity={0.18} color={SCENE_COLORS.ember} />
 
         <Scene />

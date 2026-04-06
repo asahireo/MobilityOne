@@ -43,7 +43,6 @@ export function EMoneyHero() {
       return () => { clearTimeout(t1); clearTimeout(t2); };
     };
 
-    // small initial delay so it doesn't fire on mount immediately
     const t0 = setTimeout(run, 600);
     const interval = setInterval(run, CYCLE_MS + 400);
     return () => { clearTimeout(t0); clearInterval(interval); };
@@ -108,13 +107,11 @@ export function EMoneyHero() {
             </div>
             {/* NFC icon + rings */}
             <div style={{ position: "relative", width: 32, height: 32, display: "flex", alignItems: "center", justifyContent: "center" }}>
-              {/* NFC symbol */}
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke={card.accent} strokeWidth="1.8">
                 <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2z" opacity="0.3"/>
                 <path d="M8 12c0-2.21 1.79-4 4-4s4 1.79 4 4-1.79 4-4 4"/>
                 <path d="M6 12c0-3.31 2.69-6 6-6s6 2.69 6 6"/>
               </svg>
-              {/* Pulse rings on tap */}
               {phase === "tap" && [0, 1, 2].map((i) => (
                 <div
                   key={i}
