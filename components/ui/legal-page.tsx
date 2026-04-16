@@ -35,8 +35,7 @@ function PageHero({ data }: { data: LegalPageData }) {
 
         <p className="text-xs font-bold uppercase tracking-[0.32em] text-[var(--brand-gold)]">{data.tag}</p>
         <h1
-          className="mt-6 text-4xl font-black uppercase leading-tight text-white md:text-6xl"
-          style={{ fontFamily: '"Arial Black", Impact, sans-serif' }}
+          className="mt-6 text-4xl font-bold uppercase tracking-tight leading-tight text-white md:text-6xl"
         >
           {data.title}
         </h1>
@@ -69,7 +68,7 @@ function LegalContent({ sections }: { sections: LegalSection[] }) {
               viewport={{ once: true }}
               transition={{ duration: 0.4, delay: i * 0.04 }}
             >
-              <h2 className="text-lg font-black uppercase text-black" style={{ fontFamily: '"Arial Black", Impact, sans-serif' }}>
+              <h2 className="text-lg font-bold uppercase tracking-tight text-black">
                 {section.heading}
               </h2>
               <div className="mt-4 text-sm leading-7 text-black/70">

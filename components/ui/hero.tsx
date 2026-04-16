@@ -27,19 +27,7 @@ import { assetPath } from "@/lib/asset-path";
 /*  Decorative SVGs                                                    */
 /* ------------------------------------------------------------------ */
 
-const ArrowAccentLeft = () => (
-  <svg viewBox="0 0 100 100" className="h-full w-full overflow-visible stroke-current text-[var(--brand-gold)]" fill="none" strokeWidth="5" strokeLinecap="round" strokeLinejoin="round">
-    <path d="M10,90 C 10,40 40,20 60,50 C 70,65 80,75 95,70" />
-    <path d="M80,55 L95,70 L85,85" />
-  </svg>
-);
 
-const ArrowAccentRight = () => (
-  <svg viewBox="0 0 100 100" className="h-full w-full overflow-visible stroke-current text-[var(--brand-gold)]" fill="none" strokeWidth="5" strokeLinecap="round" strokeLinejoin="round">
-    <path d="M90,10 C 80,60 60,80 40,60 C 20,40 40,20 60,30 C 80,40 70,70 50,80" />
-    <path d="M65,75 L50,80 L55,65" />
-  </svg>
-);
 
 const ArrowBlack = () => (
   <svg viewBox="0 0 100 100" className="h-full w-full overflow-visible stroke-current text-[var(--background)]" fill="none" strokeWidth="5" strokeLinecap="round" strokeLinejoin="round">
@@ -59,80 +47,83 @@ const ArrowBlack = () => (
 
 function HeroSection() {
   return (
-    <section className="relative z-10 mx-auto flex w-full max-w-[1440px] flex-col items-center justify-center px-6 pb-32 pt-8 md:px-12 md:pb-48 md:pt-12">
-      {/* Decorative arrows — desktop only, tucked at outer edges */}
-      <div className="pointer-events-none absolute inset-0 hidden overflow-hidden lg:block">
-        <div className="absolute bottom-[30%] left-6 z-20 h-20 w-20 opacity-60"><ArrowAccentLeft /></div>
-        <div className="absolute right-6 top-[20%] z-20 h-20 w-20 opacity-60"><ArrowAccentRight /></div>
-      </div>
+    <section className="relative z-10 mx-auto flex w-full max-w-7xl flex-col items-center justify-center px-6 pb-32 pt-16 md:px-12 md:pb-48 md:pt-24">
 
-      <div className="relative mx-auto mb-16 mt-4 flex w-full max-w-5xl flex-col items-center justify-center text-center">
-        {/* Text stack — font sizes capped so INFRASTRUCTURE never overflows max-w-5xl */}
-        <div className="relative z-10 flex w-full flex-col items-center space-y-0">
+
+      <div className="relative mx-auto mb-16 flex w-full flex-col items-center justify-center text-center">
+        {/* Text stack */}
+        <div className="relative z-10 flex w-full max-w-4xl flex-col items-center gap-4 md:gap-6">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7 }}
+            className="inline-flex items-center gap-2 rounded-full border border-[var(--brand-gold)]/30 bg-[var(--brand-gold)]/10 px-4 py-1.5 text-xs font-bold uppercase tracking-widest text-[var(--brand-amber)] backdrop-blur-md"
+          >
+            Digital Economy Catalyst
+          </motion.div>
+          
           <motion.h1
-            initial={{ opacity: 0, y: 40 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7 }}
-            className="relative z-30 m-0 p-0 text-[clamp(2.8rem,7vw,88px)] font-black uppercase leading-[0.9] tracking-tighter text-[var(--brand-amber)]"
-            style={{ fontFamily: '"Arial Black", Impact, sans-serif' }}>
-            MALAYSIA&apos;S
+            initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, delay: 0.1 }}
+            className="font-display text-5xl font-extrabold tracking-tight text-black sm:text-6xl md:text-7xl lg:text-[5.5rem] lg:leading-[1.1]"
+          >
+            Malaysia&apos;s Premium Payment Infrastructure
           </motion.h1>
-          <motion.h1
-            initial={{ opacity: 0, y: 50 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, delay: 0.1 }}
-            className="relative z-20 m-0 p-0 text-[clamp(3.2rem,10.5vw,148px)] font-black uppercase leading-[0.9] tracking-tighter text-black"
-            style={{ fontFamily: '"Arial Black", Impact, sans-serif' }}>
-            PAYMENT
-          </motion.h1>
-          <motion.h1
-            initial={{ opacity: 0, y: 40 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, delay: 0.2 }}
-            className="relative z-10 m-0 p-0 text-[clamp(1.6rem,5.2vw,72px)] font-black uppercase leading-[0.9] tracking-tighter text-black"
-            style={{ fontFamily: '"Arial Black", Impact, sans-serif' }}>
-            INFRASTRUCTURE
-          </motion.h1>
+          
+          <motion.p
+            initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, delay: 0.2 }}
+            className="max-w-2xl text-lg leading-relaxed text-[var(--muted)] md:text-xl"
+          >
+            Powering scalable, secure, and reliable payment ecosystems for banks, telcos, and modern enterprises since 2004.
+          </motion.p>
         </div>
 
-        {/* Floating glass cards — outside text z-stack, inset from edges */}
-        {/* Card Left */}
+        {/* Action Buttons */}
         <motion.div
-          initial={{ opacity: 0, x: -40 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.8, delay: 0.4 }}
-          className="pointer-events-auto absolute bottom-[5%] left-[-2%] z-30 md:left-[2%]"
+          initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, delay: 0.3 }}
+          className="relative z-20 mt-10 flex flex-wrap justify-center gap-4"
+        >
+          <a href="#payment-gateway" className="inline-flex h-14 items-center justify-center gap-2 rounded-full bg-[var(--brand-gold)] px-8 text-sm font-semibold text-black transition hover:bg-[var(--brand-amber)] hover:shadow-xl hover:shadow-[var(--brand-gold)]/20">
+            Explore Solutions <ArrowRight className="h-4 w-4" />
+          </a>
+          <a href="#contact" className="inline-flex h-14 items-center justify-center rounded-full border border-black/10 bg-white/50 px-8 text-sm font-semibold text-black backdrop-blur-sm transition hover:border-black/30 hover:bg-white">
+            Talk to Sales
+          </a>
+        </motion.div>
+
+        {/* Floating glass cards — positioned aesthetically */}
+        <motion.div
+          initial={{ opacity: 0, scale: 0.9, rotate: -5 }} animate={{ opacity: 1, scale: 1, rotate: -6 }} transition={{ duration: 0.8, delay: 0.4 }}
+          className="pointer-events-auto absolute -left-4 top-20 z-0 hidden lg:block xl:-left-12"
         >
           <motion.div animate={{ y: [0, -12, 0] }} transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}>
-            <div className="flex aspect-[3/3.5] w-36 -rotate-6 flex-col items-center justify-center rounded-[2rem] border border-black/10 bg-black/5 p-4 shadow-2xl backdrop-blur-sm transition-transform duration-500 hover:rotate-0 md:w-44">
-              <div className="mb-3 flex h-14 w-14 items-center justify-center rounded-2xl border-[2px] border-black/5 bg-[var(--brand-gold)]/20 md:h-18 md:w-18">
-                <Shield className="h-7 w-7 text-[var(--brand-amber)] md:h-9 md:w-9" />
-              </div>
-              <div className="mt-1 text-center">
-                <p className="text-xs font-bold text-black md:text-sm">BNM Licensed</p>
-                <p className="mt-1 text-[9px] text-black/60 md:text-[10px]">e-Money & Remittance</p>
-              </div>
+            <div className="flex aspect-[3/3.5] w-48 flex-col items-center justify-center rounded-[2rem] border border-white/40 bg-white/60 p-4 shadow-2xl backdrop-blur-md transition-transform duration-500 hover:rotate-0">
+               <div className="mb-3 flex h-16 w-16 items-center justify-center rounded-2xl border border-black/5 bg-[var(--brand-gold)]/20">
+                 <Shield className="h-8 w-8 text-[var(--brand-amber)]" />
+               </div>
+               <div className="mt-2 text-center">
+                 <p className="font-display text-sm font-bold text-black">BNM Licensed</p>
+                 <p className="mt-1 text-[11px] text-black/60">e-Money & Remittance</p>
+               </div>
             </div>
           </motion.div>
         </motion.div>
 
         {/* Card Right */}
         <motion.div
-          initial={{ opacity: 0, x: 40 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.8, delay: 0.5 }}
-          className="pointer-events-auto absolute right-[-2%] top-[8%] z-30 md:right-[2%]"
+          initial={{ opacity: 0, scale: 0.9, rotate: 5 }} animate={{ opacity: 1, scale: 1, rotate: 6 }} transition={{ duration: 0.8, delay: 0.5 }}
+          className="pointer-events-auto absolute -right-4 top-10 z-0 hidden lg:block xl:-right-12"
         >
           <motion.div animate={{ y: [0, -16, 0] }} transition={{ duration: 6, repeat: Infinity, ease: "easeInOut", delay: 1 }}>
-            <div className="flex aspect-[3/3.5] w-36 rotate-6 flex-col items-center justify-center rounded-[2rem] border border-black/10 bg-black/5 p-4 shadow-2xl backdrop-blur-sm transition-transform duration-500 hover:rotate-0 md:w-44">
-              <div className="mb-3 flex h-14 w-14 items-center justify-center rounded-2xl border-[2px] border-black/5 bg-[var(--brand-olive)]/20 md:h-18 md:w-18">
-                <CreditCard className="h-7 w-7 text-[var(--brand-moss)] md:h-9 md:w-9" />
-              </div>
-              <div className="mt-1 text-center">
-                <p className="text-xs font-bold text-black md:text-sm">Mastercard</p>
-                <p className="mt-1 text-[9px] text-black/60 md:text-[10px]">Principal issuer</p>
-              </div>
+            <div className="flex aspect-[3/3.5] w-48 flex-col items-center justify-center rounded-[2rem] border border-white/40 bg-white/60 p-4 shadow-2xl backdrop-blur-md transition-transform duration-500 hover:rotate-0">
+               <div className="mb-3 flex h-16 w-16 items-center justify-center rounded-2xl border border-black/5 bg-[var(--brand-olive)]/20">
+                 <CreditCard className="h-8 w-8 text-[var(--brand-moss)]" />
+               </div>
+               <div className="mt-2 text-center">
+                 <p className="font-display text-sm font-bold text-black">Mastercard</p>
+                 <p className="mt-1 text-[11px] text-black/60">Principal Issuer</p>
+               </div>
             </div>
           </motion.div>
         </motion.div>
 
-        {/* Spinning badge — anchored to bottom-right of text block */}
-        <motion.div
-          initial={{ opacity: 0, scale: 0.5 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 0.6, delay: 0.7 }}
-          className="pointer-events-auto absolute -bottom-14 right-4 z-40 rotate-12 md:-bottom-16 md:right-8"
-        >
-          <SpinningBadge />
-        </motion.div>
       </div>
     </section>
   );
@@ -269,8 +260,7 @@ function FeatureCards() {
       <div className="mx-auto max-w-6xl">
         <div className="mb-12 text-center">
           <p className="text-xs font-bold uppercase tracking-[0.32em] text-[var(--brand-olive)]">Products & Services</p>
-          <h2 className="mx-auto mt-4 max-w-3xl text-4xl font-black uppercase leading-tight md:text-5xl"
-            style={{ fontFamily: '"Arial Black", Impact, sans-serif' }}>
+          <h2 className="mx-auto mt-4 max-w-3xl text-4xl font-bold uppercase tracking-tight leading-tight md:text-5xl">
             FOUR PILLARS OF<br />
             <span className="text-[var(--brand-amber)]">PAYMENT</span> EXCELLENCE
           </h2>
@@ -283,7 +273,7 @@ function FeatureCards() {
             <div className="mb-4 flex h-14 w-14 items-center justify-center rounded-2xl bg-[var(--brand-gold)] text-black">
               <Smartphone className="h-7 w-7" />
             </div>
-            <h3 className="text-lg font-black uppercase leading-tight">PAYMENT<br />TERMINAL</h3>
+            <h3 className="text-lg font-bold uppercase tracking-tight leading-tight">PAYMENT<br />TERMINAL</h3>
             <p className="mt-2 text-[11px] text-black/60">Custom-built enterprise payment solutions with card, eWallet & QR acceptance.</p>
             <div className="mt-4 flex flex-wrap justify-center gap-1.5">
               {["Visa", "Mastercard", "MyDebit", "Boost", "TNG"].map((t) => (
@@ -299,7 +289,7 @@ function FeatureCards() {
             <div className="mb-4 flex h-14 w-14 items-center justify-center rounded-2xl bg-[var(--brand-gold)] text-black">
               <Globe className="h-7 w-7" />
             </div>
-            <h3 className="text-lg font-black uppercase leading-tight">PAYMENT<br />GATEWAY</h3>
+            <h3 className="text-lg font-bold uppercase tracking-tight leading-tight">PAYMENT<br />GATEWAY</h3>
             <p className="mt-2 text-[11px] text-black/60">Online & mobile payment gateway with FPX, cards, and eWallet integration.</p>
             <div className="mt-auto pt-4">
               <div className="flex items-center rounded-full bg-black p-1.5 text-white shadow-lg">
@@ -316,7 +306,7 @@ function FeatureCards() {
             <div className="mb-4 flex h-14 w-14 items-center justify-center rounded-2xl bg-[var(--brand-gold)] text-black">
               <Wallet className="h-7 w-7" />
             </div>
-            <h3 className="text-lg font-black uppercase leading-tight">E-MONEY<br />SOLUTION</h3>
+            <h3 className="text-lg font-bold uppercase tracking-tight leading-tight">E-MONEY<br />SOLUTION</h3>
             <p className="mt-2 text-[11px] text-black/60">BNM-approved e-Wallet platform with DuitNow QR, card-based & mobile app capabilities.</p>
             <div className="mt-auto pt-4">
               <div className="rounded-2xl bg-[var(--brand-amber)] px-4 py-2.5 text-center shadow-md text-black">
@@ -333,7 +323,7 @@ function FeatureCards() {
             <div className="mb-4 flex h-14 w-14 items-center justify-center rounded-2xl bg-[var(--brand-gold)] text-black">
               <Send className="h-7 w-7" />
             </div>
-            <h3 className="text-lg font-black uppercase leading-tight">REMITTANCE<br />SERVICES</h3>
+            <h3 className="text-lg font-bold uppercase tracking-tight leading-tight">REMITTANCE<br />SERVICES</h3>
             <p className="mt-2 text-[11px] text-black/60">BNM-licensed money transfer via OneTransfer — 6 branches plus mobile app.</p>
             <div className="mt-auto pt-4 flex flex-wrap justify-center gap-1.5">
               {["MoneyGram", "Tranglo", "BNI"].map((t) => (
@@ -368,8 +358,7 @@ function Licenses() {
       <div className="relative z-10 mx-auto max-w-7xl">
         <div className="mb-16 flex flex-col items-center text-center">
           <p className="text-xs font-bold uppercase tracking-[0.32em] text-[var(--brand-gold)]">Regulated & Trusted</p>
-          <h2 className="mx-auto mt-6 max-w-4xl text-4xl font-black uppercase leading-tight text-black md:text-6xl"
-            style={{ fontFamily: '"Arial Black", Impact, sans-serif' }}>
+          <h2 className="mx-auto mt-6 max-w-4xl text-4xl font-bold uppercase tracking-tight leading-tight text-black md:text-6xl">
             LICENSED BY <span className="text-[var(--brand-amber)]">BNM</span> &<br />MASTERCARD
           </h2>
           <p className="mx-auto mt-6 max-w-2xl text-base leading-7 text-[var(--muted)]">
@@ -417,8 +406,7 @@ function BigStats() {
       <div className="relative z-10 mx-auto max-w-7xl">
         <div className="mb-16 text-center">
           <p className="text-xs font-bold uppercase tracking-[0.32em] text-[var(--brand-olive)]">By the numbers</p>
-          <h2 className="mt-6 text-4xl font-black uppercase text-black md:text-6xl"
-            style={{ fontFamily: '"Arial Black", Impact, sans-serif' }}>
+          <h2 className="mt-6 text-4xl font-bold uppercase tracking-tight text-black md:text-6xl">
             PROVEN <span className="text-[var(--brand-amber)]">PERFORMANCE</span>
           </h2>
         </div>
@@ -487,8 +475,7 @@ function Partners() {
       <div className="relative z-10 mx-auto max-w-7xl">
         <div className="mb-16 text-center">
           <p className="text-xs font-bold uppercase tracking-[0.32em] text-[var(--brand-gold)]">Our Clients & Partners</p>
-          <h2 className="mt-6 text-4xl font-black uppercase text-black md:text-6xl"
-            style={{ fontFamily: '"Arial Black", Impact, sans-serif' }}>
+          <h2 className="mt-6 text-4xl font-bold uppercase tracking-tight text-black md:text-6xl">
             TRUSTED BY <span className="text-[var(--brand-amber)]">BANKS</span>,<br />TELCOS & ENTERPRISES
           </h2>
           <p className="mx-auto mt-6 max-w-2xl text-base leading-7 text-[var(--muted)]">
@@ -554,8 +541,7 @@ function PlatformCapabilities() {
       <div className="relative z-10 mx-auto max-w-7xl">
         <div className="mb-20 text-center">
           <p className="text-xs font-bold uppercase tracking-[0.32em] text-[var(--brand-gold)]">Deep Dive</p>
-          <h2 className="mt-6 text-4xl font-black uppercase text-black md:text-6xl"
-            style={{ fontFamily: '"Arial Black", Impact, sans-serif' }}>
+          <h2 className="mt-6 text-4xl font-bold uppercase tracking-tight text-black md:text-6xl">
             OUR <span className="text-[var(--brand-amber)]">SOLUTIONS</span> IN DETAIL
           </h2>
         </div>
@@ -635,8 +621,7 @@ function WhitelabelPartners() {
       <div className="mx-auto max-w-7xl">
         <div className="mb-16 text-center">
           <p className="text-xs font-bold uppercase tracking-[0.32em] text-[var(--brand-olive)]">White-Label Program</p>
-          <h2 className="mt-6 text-4xl font-black uppercase md:text-6xl"
-            style={{ fontFamily: '"Arial Black", Impact, sans-serif' }}>
+          <h2 className="mt-6 text-4xl font-bold uppercase tracking-tight md:text-6xl">
             7+ PARTNERS <span className="text-[var(--brand-amber)]">LIVE</span>
           </h2>
           <p className="mx-auto mt-6 max-w-2xl text-base leading-7 text-black/60">
@@ -717,8 +702,7 @@ function FinalCta() {
           className="overflow-hidden rounded-[2.5rem] border border-black/10 bg-[linear-gradient(135deg,rgba(236,194,56,0.1),rgba(155,168,108,0.05),rgba(0,0,0,0.02))] p-10 text-center md:p-20"
         >
           <p className="text-xs font-bold uppercase tracking-[0.32em] text-[var(--brand-gold)]">How can we assist you?</p>
-          <h2 className="mx-auto mt-8 max-w-3xl text-4xl font-black uppercase leading-tight text-black md:text-6xl"
-            style={{ fontFamily: '"Arial Black", Impact, sans-serif' }}>
+          <h2 className="mx-auto mt-8 max-w-3xl text-4xl font-bold uppercase tracking-tight leading-tight text-black md:text-6xl">
             LET&apos;S BUILD <span className="text-[var(--brand-amber)]">TOGETHER</span>
           </h2>
           <p className="mx-auto mt-6 max-w-2xl text-base leading-7 text-black/60">

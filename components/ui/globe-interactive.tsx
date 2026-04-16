@@ -170,16 +170,9 @@ export function GlobeInteractive({
             zoom: expanded === m.id ? 1.05 : 1,
           }}
         >
-          <span style={{
-            fontFamily: "monospace", fontSize: "0.6rem", fontWeight: 600,
-            letterSpacing: "0.08em", textTransform: "uppercase" as const,
-          }}>{m.name}</span>
+          <span >{m.name}</span>
           {expanded === m.id && (
-            <span style={{
-              fontFamily: "system-ui, sans-serif", fontSize: "0.55rem",
-              opacity: 0.8, marginTop: "0.15rem",
-              animation: "fade-slide-in 0.2s ease-out",
-            }}>
+            <span >
               {m.users.toLocaleString()} users
             </span>
           )}

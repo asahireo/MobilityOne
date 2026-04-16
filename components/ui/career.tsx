@@ -62,8 +62,7 @@ export function CareerPage() {
           </nav>
           <p className="text-xs font-bold uppercase tracking-[0.32em] text-[var(--brand-gold)]">Join Us</p>
           <h1
-            className="mx-auto mt-6 max-w-4xl text-4xl font-black uppercase leading-tight text-white md:text-6xl lg:text-7xl"
-            style={{ fontFamily: '"Arial Black", Impact, sans-serif' }}
+            className="mx-auto mt-6 max-w-4xl text-4xl font-bold uppercase tracking-tight leading-tight text-white md:text-6xl lg:text-7xl"
           >
             BUILD MALAYSIA&apos;S PAYMENT <span className="text-[var(--brand-gold)]">FUTURE</span>
           </h1>
@@ -86,8 +85,7 @@ export function CareerPage() {
           <div className="mb-12 text-center">
             <p className="text-xs font-bold uppercase tracking-[0.32em] text-[var(--brand-olive)]">Why Join Us</p>
             <h2
-              className="mt-6 text-4xl font-black uppercase text-white md:text-5xl"
-              style={{ fontFamily: '"Arial Black", Impact, sans-serif' }}
+              className="mt-6 text-4xl font-bold uppercase tracking-tight text-white md:text-5xl"
             >
               WHY <span className="text-[var(--brand-gold)]">MOBILITYONE</span>
             </h2>
@@ -116,8 +114,7 @@ export function CareerPage() {
           <div className="mb-12 text-center">
             <p className="text-xs font-bold uppercase tracking-[0.32em] text-[var(--brand-olive)]">Opportunities</p>
             <h2
-              className="mt-4 text-4xl font-black uppercase md:text-5xl"
-              style={{ fontFamily: '"Arial Black", Impact, sans-serif' }}
+              className="mt-4 text-4xl font-bold uppercase tracking-tight md:text-5xl"
             >
               OPEN <span className="text-[var(--brand-amber)]">POSITIONS</span>
             </h2>

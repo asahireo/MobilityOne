@@ -64,8 +64,7 @@ export function NewsPage() {
           </nav>
           <p className="text-xs font-bold uppercase tracking-[0.32em] text-[var(--brand-gold)]">Latest</p>
           <h1
-            className="mx-auto mt-6 text-4xl font-black uppercase leading-tight text-white md:text-6xl"
-            style={{ fontFamily: '"Arial Black", Impact, sans-serif' }}
+            className="mx-auto mt-6 text-4xl font-bold uppercase tracking-tight leading-tight text-white md:text-6xl"
           >
             NEWS & <span className="text-[var(--brand-gold)]">UPDATES</span>
           </h1>

@@ -8,7 +8,7 @@ export default function SpinningBadge() {
       <div className="absolute inset-1 animate-[spin_10s_linear_infinite]">
         <svg viewBox="0 0 100 100" className="h-full w-full">
           <path id="circlePath" d="M 50, 50 m -36, 0 a 36,36 0 1,1 72,0 a 36,36 0 1,1 -72,0" fill="none" />
-          <text className="text-[11px] font-black uppercase tracking-[0.18em]" fill="black">
+          <text className="text-[11px] font-bold uppercase tracking-tight tracking-[0.18em]" fill="black">
             <textPath href="#circlePath" startOffset="0%">
               POWERING DIGITAL PAYMENTS • MOBILITYONE •{" "}
             </textPath>

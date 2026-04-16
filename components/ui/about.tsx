@@ -84,8 +84,7 @@ function PageHero() {
         <p className="text-xs font-bold uppercase tracking-[0.32em] text-[var(--brand-gold)]">About Us</p>
 
         <h1
-          className="mx-auto mt-6 max-w-5xl text-4xl font-black uppercase leading-tight text-black md:text-6xl lg:text-7xl"
-          style={{ fontFamily: '"Arial Black", Impact, sans-serif' }}
+          className="mx-auto mt-6 max-w-5xl text-4xl font-bold uppercase tracking-tight leading-tight text-black md:text-6xl lg:text-7xl"
         >
           BUILDING MALAYSIA&apos;S{" "}
           <span className="text-black">PAYMENT</span> FUTURE SINCE 2003
@@ -113,8 +112,7 @@ function CompanyTimeline() {
         <div className="mb-16 text-center">
           <p className="text-xs font-bold uppercase tracking-[0.32em] text-[var(--brand-gold)]">Our Journey</p>
           <h2
-            className="mt-6 text-4xl font-black uppercase text-black md:text-6xl"
-            style={{ fontFamily: '"Arial Black", Impact, sans-serif' }}
+            className="mt-6 text-4xl font-bold uppercase tracking-tight text-black md:text-6xl"
           >
             20+ YEARS OF <span className="text-[var(--brand-amber)]">INNOVATION</span>
           </h2>
@@ -173,8 +171,7 @@ function MissionVision() {
         <div className="mb-16 text-center">
           <p className="text-xs font-bold uppercase tracking-[0.32em] text-[var(--brand-gold)]">What Drives Us</p>
           <h2
-            className="mt-6 text-4xl font-black uppercase text-black md:text-6xl"
-            style={{ fontFamily: '"Arial Black", Impact, sans-serif' }}
+            className="mt-6 text-4xl font-bold uppercase tracking-tight text-black md:text-6xl"
           >
             MISSION & <span className="text-[var(--brand-amber)]">VISION</span>
           </h2>
@@ -234,8 +231,7 @@ function BoardOfDirectors() {
         <div className="mb-12 text-center">
           <p className="text-xs font-bold uppercase tracking-[0.32em] text-[var(--brand-olive)]">Leadership</p>
           <h2
-            className="mx-auto mt-4 max-w-3xl text-4xl font-black uppercase leading-tight md:text-5xl"
-            style={{ fontFamily: '"Arial Black", Impact, sans-serif' }}
+            className="mx-auto mt-4 max-w-3xl text-4xl font-bold uppercase tracking-tight leading-tight md:text-5xl"
           >
             BOARD OF <span className="text-[var(--brand-amber)]">DIRECTORS</span>
           </h2>
@@ -299,8 +295,7 @@ function OfficeCta() {
           <div className="flex flex-col gap-6">
             <p className="text-xs font-bold uppercase tracking-[0.32em] text-[var(--brand-gold)]">Our Office</p>
             <h2
-              className="text-4xl font-black uppercase text-black md:text-5xl"
-              style={{ fontFamily: '"Arial Black", Impact, sans-serif' }}
+              className="text-4xl font-bold uppercase tracking-tight text-black md:text-5xl"
             >
               VISIT <span className="text-[var(--brand-amber)]">US</span>
             </h2>

@@ -90,8 +90,7 @@ function PageHero({ data }: { data: SolutionPageData }) {
 
           <motion.h1
             variants={stagger.item}
-            className="mt-5 text-4xl font-black uppercase leading-[1.05] text-black md:text-5xl lg:text-6xl"
-            style={{ fontFamily: '"Arial Black", Impact, sans-serif' }}
+            className="mt-5 text-4xl font-bold uppercase tracking-tight leading-[1.05] text-black md:text-5xl lg:text-6xl"
           >
             {data.headline}{" "}
             <span className="text-[var(--brand-amber)]">{data.headlineAccent}</span>
@@ -254,15 +253,13 @@ function FeatureCard({ feature, index }: { feature: SolutionFeature; index: numb
         <div className="flex items-center gap-4">
           <span
             className="text-[5rem] font-black leading-none text-black/[0.06] select-none"
-            style={{ fontFamily: '"Arial Black", Impact, sans-serif' }}
           >
             {String(index + 1).padStart(2, "0")}
           </span>
           <div className="h-px flex-1 bg-gradient-to-r from-[var(--brand-olive)]/30 to-transparent" />
         </div>
         <h3
-          className="-mt-3 text-2xl font-black uppercase leading-tight md:text-3xl"
-          style={{ fontFamily: '"Arial Black", Impact, sans-serif' }}
+          className="-mt-3 text-2xl font-bold uppercase tracking-tight leading-tight md:text-3xl"
         >
           {feature.title}
         </h3>
@@ -327,8 +324,7 @@ function Features({ features }: { features: SolutionFeature[] }) {
             initial={{ opacity: 0, y: 16 }}
             animate={headInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.5, delay: 0.1 }}
-            className="mt-4 text-4xl font-black uppercase md:text-5xl"
-            style={{ fontFamily: '"Arial Black", Impact, sans-serif' }}
+            className="mt-4 text-4xl font-bold uppercase tracking-tight md:text-5xl"
           >
             KEY <span className="text-[var(--brand-amber)]">FEATURES</span>
           </motion.h2>
@@ -418,8 +414,7 @@ function WhitelabelPartners({ items }: { items: SolutionPartner[] }) {
             initial={{ opacity: 0, y: 16 }}
             animate={inView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.5, delay: 0.1 }}
-            className="mt-6 text-4xl font-black uppercase text-black md:text-5xl"
-            style={{ fontFamily: '"Arial Black", Impact, sans-serif' }}
+            className="mt-6 text-4xl font-bold uppercase tracking-tight text-black md:text-5xl"
           >
             {items.length}+ PARTNERS <span className="text-[var(--brand-amber)]">LIVE</span>
           </motion.h2>

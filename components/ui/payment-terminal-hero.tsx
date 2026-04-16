@@ -180,7 +180,6 @@ export function PaymentTerminalHero() {
               <div className="absolute bottom-2.5 right-4 flex items-baseline gap-1">
                 <span
                   className="text-[11px] font-black tracking-[0.2em] text-white/80"
-                  style={{ fontFamily: "Arial Black, sans-serif" }}
                 >
                   SUNNI P2
                 </span>
