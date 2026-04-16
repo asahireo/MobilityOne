@@ -1,0 +1,8 @@
+{
+    "chat.tools.terminal.autoApprove": {
+        "/^send -- \"y\\\\n\"$/": {
+            "approve": true,
+            "matchCommandLine": true
+        }
+    }
+}

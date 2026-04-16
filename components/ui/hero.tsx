@@ -195,7 +195,7 @@ function ThreeDShowcase() {
 
               {/* Middle Card: MiPAY Mastercard */}
               <img
-                src="/assets/img/clients/mipay-mastercard.svg"
+                src={`${process.env.NEXT_PUBLIC_BASE_PATH || ""}/assets/img/clients/mipay-mastercard.svg`}
                 alt="MiPAY Mastercard"
                 className="absolute left-[5%] top-[25%] w-[240px] rounded-2xl shadow-2xl transition-transform duration-700 ease-out group-hover:-translate-x-4 group-hover:-rotate-3 lg:left-[15%]"
               />
