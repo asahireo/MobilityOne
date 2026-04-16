@@ -1,0 +1,44 @@
+<h2>Implementation Approach</h2>
+<p class="subtitle">Three ways to build the animated Payment Flow visual</p>
+
+<div class="options">
+
+  <div class="option" data-choice="a" onclick="toggleSelect(this)">
+    <div class="letter">A</div>
+    <div class="content">
+      <h3>React Three Fiber (Three.js) — recommended</h3>
+      <p>Full 3D scene using the same stack as <code>fluid-glass.tsx</code>. Floating node meshes (Store, Gateway, Bank, Approval) connected by curved tube paths. Animated sphere particles travel along the paths as data pulses. Bloom post-processing for the gold glow. Consistent with codebase patterns.</p>
+      <div class="pros-cons" style="margin-top:10px;">
+        <div class="pros"><h4>Pros</h4><ul><li>Most visually impressive</li><li>Consistent with existing 3D stack</li><li>Bloom + depth make it hero-worthy</li></ul></div>
+        <div class="cons"><h4>Cons</h4><ul><li>Heavier bundle (already paid by other pages)</li></ul></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="option" data-choice="b" onclick="toggleSelect(this)">
+    <div class="letter">B</div>
+    <div class="content">
+      <h3>CSS 3D + SVG Animations — lightweight</h3>
+      <p>Nodes as styled divs with CSS perspective tilt, SVG lines connecting them, and <code>stroke-dashoffset</code> animation to create traveling pulse dots. Zero new dependencies. Lucide icons inside each node.</p>
+      <div class="pros-cons" style="margin-top:10px;">
+        <div class="pros"><h4>Pros</h4><ul><li>Zero extra dependencies</li><li>Fast to implement</li><li>Very reliable</li></ul></div>
+        <div class="cons"><h4>Cons</h4><ul><li>Less depth and polish than 3D</li><li>Harder to achieve the same premium look</li></ul></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="option" data-choice="c" onclick="toggleSelect(this)">
+    <div class="letter">C</div>
+    <div class="content">
+      <h3>React Three Fiber — Hub & Spoke</h3>
+      <p>Same Three.js stack but with a hub-and-spoke topology: multiple payment methods (Visa, TNG, GrabPay, DuitNow…) feeding into a central Gateway node, which then fans out to Bank and Approval. Shows the many-to-one-to-many nature of a gateway.</p>
+      <div class="pros-cons" style="margin-top:10px;">
+        <div class="pros"><h4>Pros</h4><ul><li>Communicates ecosystem breadth</li><li>Visually rich</li></ul></div>
+        <div class="cons"><h4>Cons</h4><ul><li>More complex to read at a glance</li><li>Harder to convey clear flow direction</li></ul></div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<p class="subtitle" style="margin-top:16px;">I recommend <strong>A</strong> — it matches the codebase's existing 3D pattern and will look the most polished on the hero. Click to confirm or pick another.</p>

@@ -76,22 +76,22 @@ function PageHero() {
         className="flex flex-col items-center text-center"
       >
         <nav className="mb-8 flex items-center gap-2 text-xs text-[var(--muted)]">
-          <Link href="/" className="transition hover:text-white">Home</Link>
+          <Link href="/" className="transition hover:text-black">Home</Link>
           <span>/</span>
-          <span className="text-white">About Us</span>
+          <span className="text-black">About Us</span>
         </nav>
 
         <p className="text-xs font-bold uppercase tracking-[0.32em] text-[var(--brand-gold)]">About Us</p>
 
         <h1
-          className="mx-auto mt-6 max-w-5xl text-4xl font-black uppercase leading-tight text-white md:text-6xl lg:text-7xl"
+          className="mx-auto mt-6 max-w-5xl text-4xl font-black uppercase leading-tight text-black md:text-6xl lg:text-7xl"
           style={{ fontFamily: '"Arial Black", Impact, sans-serif' }}
         >
           BUILDING MALAYSIA&apos;S{" "}
-          <span className="text-[var(--brand-gold)]">PAYMENT</span> FUTURE SINCE 2003
+          <span className="text-black">PAYMENT</span> FUTURE SINCE 2003
         </h1>
 
-        <p className="mx-auto mt-6 max-w-2xl text-base leading-7 text-[var(--muted)]">
+        <p className="mx-auto mt-6 max-w-2xl text-base leading-7 text-black">
           MobilityOne Sdn Bhd (200201033972) — BNM-licensed e-money operator, Mastercard principal issuer,
           and MSC Malaysia status company. Listed on AIM of the London Stock Exchange (MBO.UK).
         </p>
@@ -113,10 +113,10 @@ function CompanyTimeline() {
         <div className="mb-16 text-center">
           <p className="text-xs font-bold uppercase tracking-[0.32em] text-[var(--brand-gold)]">Our Journey</p>
           <h2
-            className="mt-6 text-4xl font-black uppercase text-white md:text-6xl"
+            className="mt-6 text-4xl font-black uppercase text-black md:text-6xl"
             style={{ fontFamily: '"Arial Black", Impact, sans-serif' }}
           >
-            20+ YEARS OF <span className="text-[var(--brand-gold)]">INNOVATION</span>
+            20+ YEARS OF <span className="text-[var(--brand-amber)]">INNOVATION</span>
           </h2>
         </div>
 
@@ -143,9 +143,9 @@ function CompanyTimeline() {
 
                 {/* Content card */}
                 <div className={`flex-1 ${i % 2 === 0 ? "md:pr-16 md:text-right" : "md:pl-16 md:text-left"}`}>
-                  <div className="inline-block rounded-2xl border border-white/8 bg-white/[0.04] px-6 py-4 backdrop-blur-sm">
-                    <span className="font-display text-lg font-bold text-[var(--brand-gold)]">{m.year}</span>
-                    <p className="mt-1 text-sm text-white/80">{m.label}</p>
+                  <div className="inline-block rounded-2xl border border-black/5 bg-black/[0.03] px-6 py-4 backdrop-blur-sm">
+                    <span className="font-display text-lg font-bold text-[var(--brand-amber)]">{m.year}</span>
+                    <p className="mt-1 text-sm text-black/80">{m.label}</p>
                   </div>
                 </div>
 
@@ -173,10 +173,10 @@ function MissionVision() {
         <div className="mb-16 text-center">
           <p className="text-xs font-bold uppercase tracking-[0.32em] text-[var(--brand-gold)]">What Drives Us</p>
           <h2
-            className="mt-6 text-4xl font-black uppercase text-white md:text-6xl"
+            className="mt-6 text-4xl font-black uppercase text-black md:text-6xl"
             style={{ fontFamily: '"Arial Black", Impact, sans-serif' }}
           >
-            MISSION & <span className="text-[var(--brand-gold)]">VISION</span>
+            MISSION & <span className="text-[var(--brand-amber)]">VISION</span>
           </h2>
         </div>
 
@@ -186,12 +186,12 @@ function MissionVision() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
-            className="group rounded-[2rem] border border-white/8 bg-white/[0.04] p-8 backdrop-blur-sm transition-all duration-300 hover:border-[var(--brand-gold)]/30 hover:bg-white/[0.07]"
+            className="group rounded-[2rem] border border-black/5 bg-black/[0.03] p-8 backdrop-blur-sm transition-all duration-300 hover:border-black/10 hover:bg-black/[0.05]"
           >
-            <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-[var(--brand-gold)]/10 text-[var(--brand-gold)] transition-colors group-hover:bg-[var(--brand-gold)]/20">
+            <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-[var(--brand-gold)]/15 text-[var(--brand-amber)] transition-colors group-hover:bg-[var(--brand-gold)]/25">
               <Eye className="h-6 w-6" />
             </div>
-            <h3 className="mt-6 font-display text-2xl font-bold text-white">Vision</h3>
+            <h3 className="mt-6 font-display text-2xl font-bold text-black">Vision</h3>
             <p className="mt-4 text-base leading-7 text-[var(--muted)]">
               To become the preeminent fintech company transforming payments, eCommerce, and virtual
               marketplaces through innovative, impactful solutions.
@@ -203,12 +203,12 @@ function MissionVision() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.08 }}
-            className="group rounded-[2rem] border border-white/8 bg-white/[0.04] p-8 backdrop-blur-sm transition-all duration-300 hover:border-[var(--brand-gold)]/30 hover:bg-white/[0.07]"
+            className="group rounded-[2rem] border border-black/5 bg-black/[0.03] p-8 backdrop-blur-sm transition-all duration-300 hover:border-black/10 hover:bg-black/[0.05]"
           >
-            <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-[var(--brand-gold)]/10 text-[var(--brand-gold)] transition-colors group-hover:bg-[var(--brand-gold)]/20">
+            <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-[var(--brand-gold)]/15 text-[var(--brand-amber)] transition-colors group-hover:bg-[var(--brand-gold)]/25">
               <Rocket className="h-6 w-6" />
             </div>
-            <h3 className="mt-6 font-display text-2xl font-bold text-white">Mission</h3>
+            <h3 className="mt-6 font-display text-2xl font-bold text-black">Mission</h3>
             <p className="mt-4 text-base leading-7 text-[var(--muted)]">
               To empower small merchants and financial institutions with seamless, secure, and intelligent
               payment solutions—bridging innovation with everyday transactions through advanced terminals,
@@ -299,10 +299,10 @@ function OfficeCta() {
           <div className="flex flex-col gap-6">
             <p className="text-xs font-bold uppercase tracking-[0.32em] text-[var(--brand-gold)]">Our Office</p>
             <h2
-              className="text-4xl font-black uppercase text-white md:text-5xl"
+              className="text-4xl font-black uppercase text-black md:text-5xl"
               style={{ fontFamily: '"Arial Black", Impact, sans-serif' }}
             >
-              VISIT <span className="text-[var(--brand-gold)]">US</span>
+              VISIT <span className="text-[var(--brand-amber)]">US</span>
             </h2>
 
             <div className="space-y-4 text-base leading-7 text-[var(--muted)]">
@@ -313,11 +313,11 @@ function OfficeCta() {
                 10050 George Town, Penang, Malaysia
               </p>
               <p>
-                <span className="font-semibold text-white">Phone:</span> +603-9213 0669
+                <span className="font-semibold text-black">Phone:</span> +603-9213 0669
               </p>
               <p>
-                <span className="font-semibold text-white">Email:</span>{" "}
-                <a href="mailto:m1enquiry@mobilityone.com.my" className="transition hover:text-white">
+                <span className="font-semibold text-black">Email:</span>{" "}
+                <a href="mailto:m1enquiry@mobilityone.com.my" className="transition hover:text-black">
                   m1enquiry@mobilityone.com.my
                 </a>
               </p>
@@ -332,7 +332,7 @@ function OfficeCta() {
               </Link>
               <Link
                 href="/investor-relations"
-                className="rounded-full border border-white/15 px-8 py-4 text-sm font-semibold text-white transition hover:border-[var(--brand-gold)]"
+                className="rounded-full border border-black/15 px-8 py-4 text-sm font-semibold text-black transition hover:border-black/30"
               >
                 Investor Relations
               </Link>
@@ -352,7 +352,7 @@ export function AboutPage() {
   return (
     <div className="relative flex min-h-screen w-full flex-col overflow-hidden font-sans selection:bg-[var(--brand-gold)] selection:text-black">
       {/* Background grid */}
-      <div className="pointer-events-none fixed inset-0 z-0 bg-[linear-gradient(to_right,#ffffff08_1px,transparent_1px),linear-gradient(to_bottom,#ffffff08_1px,transparent_1px)] bg-[size:4rem_4rem]" />
+      <div className="pointer-events-none fixed inset-0 z-0 bg-[linear-gradient(to_right,#00000008_1px,transparent_1px),linear-gradient(to_bottom,#00000008_1px,transparent_1px)] bg-[size:4rem_4rem]" />
 
       {/* Ambient glows */}
       <div className="pointer-events-none absolute -left-32 top-0 h-[600px] w-[600px] rounded-full bg-[var(--brand-gold)]/15 blur-[120px]" />

@@ -28,13 +28,13 @@ export default function Nav() {
 
       <div className="hidden items-center space-x-2 lg:flex">
         {navLinks.map((item) => (
-          <Link key={item.label} href={item.href} className="rounded-full border border-white/20 px-4 py-1.5 text-xs font-semibold text-white transition-colors hover:bg-white/10">
+          <Link key={item.label} href={item.href} className="rounded-full border border-black/10 px-4 py-1.5 text-xs font-semibold text-black transition-colors hover:bg-black/5">
             {item.label}
           </Link>
         ))}
       </div>
 
-      <Link href="/contact" className="rounded-full border border-white px-6 py-2 text-xs font-semibold text-white transition-colors hover:bg-white hover:text-black md:text-sm">
+      <Link href="/contact" className="rounded-full border border-black px-6 py-2 text-xs font-semibold text-black transition-colors hover:bg-black hover:text-white md:text-sm">
         Contact us
       </Link>
     </nav>

@@ -67,8 +67,8 @@ export function PaymentGatewayHero() {
                   width: isHub ? 56 : 46,
                   height: isHub ? 56 : 46,
                   borderRadius: isHub ? 14 : 12,
-                  background: "#0d0d0e",
-                  border: `2px solid ${isActive ? step.color : dim ? "#1c1c1e" : step.color + "44"}`,
+                  background: "#ffffff",
+                  border: `2px solid ${isActive ? step.color : dim ? "#e5e7eb" : step.color + "44"}`,
                   display: "flex",
                   alignItems: "center",
                   justifyContent: "center",
@@ -80,7 +80,7 @@ export function PaymentGatewayHero() {
                 }}>
                   <Icon
                     size={isHub ? 24 : 18}
-                    color={isActive ? step.color : dim ? "#2a2a2e" : step.color + "66"}
+                    color={isActive ? step.color : dim ? "#9ca3af" : step.color + "66"}
                     strokeWidth={1.8}
                     style={{ transition: "color 0.35s ease" }}
                   />
@@ -103,14 +103,14 @@ export function PaymentGatewayHero() {
                     fontWeight: 800,
                     letterSpacing: "0.1em",
                     textTransform: "uppercase",
-                    color: isActive ? step.color : dim ? "#2a2a2e" : step.color + "77",
+                    color: isActive ? step.color : dim ? "#6b7280" : step.color + "aa",
                     transition: "color 0.35s ease",
                   }}>
                     {step.label}
                   </span>
                   <span style={{
                     fontSize: 10,
-                    color: isActive ? "#ffffff66" : "#2a2a2e",
+                    color: isActive ? "#111827" : "#9ca3af",
                     letterSpacing: "0.04em",
                     transition: "color 0.35s ease",
                   }}>
@@ -126,11 +126,11 @@ export function PaymentGatewayHero() {
                         fontSize: 8,
                         padding: "2px 6px",
                         borderRadius: 99,
-                        border: "1px solid #fdd44833",
-                        color: isActive ? "#fdd44899" : "#2a2a2e",
+                        border: "1px solid #ecc23833",
+                        color: isActive ? "#d0aa31" : "#6b7280",
                         letterSpacing: "0.05em",
                         transition: "color 0.35s ease, border-color 0.35s ease",
-                        borderColor: isActive ? "#fdd44833" : "#1c1c1e",
+                        borderColor: isActive ? "#ecc23844" : "#e5e7eb",
                       }}>
                         {m}
                       </span>
@@ -151,7 +151,7 @@ export function PaymentGatewayHero() {
                   <div style={{
                     position: "absolute",
                     inset: 0,
-                    background: "#1c1c1e",
+                    background: "#e5e7eb",
                     borderRadius: 2,
                   }} />
                   {/* Filled */}
@@ -199,7 +199,7 @@ export function PaymentGatewayHero() {
         {STATUS_CHIPS.map(({ label, color }) => (
           <span
             key={label}
-            className="rounded-full border border-white/10 bg-white/[0.04] px-3 py-1.5 text-xs font-semibold text-white/50 flex items-center gap-1.5"
+            className="rounded-full border border-black/10 bg-black/[0.03] px-3 py-1.5 text-xs font-semibold text-black/60 flex items-center gap-1.5"
           >
             <span className="w-1.5 h-1.5 rounded-full shrink-0" style={{ background: color, boxShadow: `0 0 5px ${color}` }} />
             {label}

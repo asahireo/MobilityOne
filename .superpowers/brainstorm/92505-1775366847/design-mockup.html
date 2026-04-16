@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Payment Gateway Hero — Design Mockup</title>
+<script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    background: #070506;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    color: white;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 32px 24px;
+    gap: 24px;
+  }
+  h2 { font-size: 15px; font-weight: 600; color: rgba(255,255,255,0.5); letter-spacing: 0.1em; text-transform: uppercase; }
+
+  /* ── SCENE ── */
+  .scene {
+    width: 100%;
+    max-width: 620px;
+    height: 320px;
+    position: relative;
+    background: #070506;
+    border-radius: 20px;
+    border: 1px solid rgba(255,255,255,0.06);
+    overflow: hidden;
+  }
+
+  /* Ground grid */
+  .scene::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image:
+      linear-gradient(rgba(253,212,72,0.04) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(253,212,72,0.04) 1px, transparent 1px);
+    background-size: 40px 40px;
+    border-radius: 20px;
+  }
+
+  /* Ambient glow blobs */
+  .glow-blob {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(60px);
+    pointer-events: none;
+  }
+
+  /* ── NODES ── */
+  .nodes-row {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0;
+    padding: 0 40px;
+  }
+
+  .node-wrap {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    flex: 0 0 auto;
+    z-index: 2;
+    position: relative;
+  }
+
+  .node {
+    width: 72px;
+    height: 72px;
+    border-radius: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    transition: transform 0.3s ease;
+    cursor: default;
+  }
+
+  .node-icon {
+    position: relative;
+    z-index: 1;
+  }
+
+  .node-label {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    text-align: center;
+    opacity: 0.8;
+  }
+
+  /* Node styles */
+  .node-merchant {
+    background: linear-gradient(135deg, #1a1a1c, #141416);
+    border: 1px solid rgba(255,255,255,0.12);
+    box-shadow: 0 0 30px rgba(255,255,255,0.04), 0 8px 24px rgba(0,0,0,0.6);
+  }
+  .node-merchant .node-icon { color: rgba(255,255,255,0.7); }
+  .node-merchant-label { color: rgba(255,255,255,0.5); }
+
+  .node-gateway {
+    background: linear-gradient(135deg, #2a1e06, #1a1208);
+    border: 1px solid rgba(253,212,72,0.35);
+    box-shadow: 0 0 40px rgba(253,212,72,0.18), 0 0 80px rgba(253,212,72,0.08), 0 8px 24px rgba(0,0,0,0.6);
+    transform: scale(1.12);
+  }
+  .node-gateway .node-icon { color: #fdd448; }
+  .node-gateway-label { color: #fdd448; }
+
+  .node-bank {
+    background: linear-gradient(135deg, #0d1a2a, #091018);
+    border: 1px solid rgba(96,165,250,0.2);
+    box-shadow: 0 0 30px rgba(96,165,250,0.08), 0 8px 24px rgba(0,0,0,0.6);
+  }
+  .node-bank .node-icon { color: rgba(96,165,250,0.8); }
+  .node-bank-label { color: rgba(96,165,250,0.6); }
+
+  .node-approved {
+    background: linear-gradient(135deg, #0a1f14, #071410);
+    border: 1px solid rgba(74,222,128,0.25);
+    box-shadow: 0 0 30px rgba(74,222,128,0.1), 0 8px 24px rgba(0,0,0,0.6);
+  }
+  .node-approved .node-icon { color: rgba(74,222,128,0.9); }
+  .node-approved-label { color: rgba(74,222,128,0.7); }
+
+  /* ── CONNECTORS ── */
+  .connector {
+    flex: 1;
+    height: 2px;
+    position: relative;
+    margin-top: -22px; /* align with node center */
+    z-index: 1;
+  }
+
+  .connector-line {
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(to right, var(--from), var(--to));
+    opacity: 0.35;
+    border-radius: 1px;
+  }
+
+  /* Animated pulse dot */
+  .pulse-dot {
+    position: absolute;
+    top: 50%;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    transform: translateY(-50%);
+    animation: travel 2.4s linear infinite;
+  }
+  .pulse-dot:nth-child(2) { animation-delay: -0.8s; }
+  .pulse-dot:nth-child(3) { animation-delay: -1.6s; }
+
+  @keyframes travel {
+    0%   { left: -4px; opacity: 0; }
+    10%  { opacity: 1; }
+    90%  { opacity: 1; }
+    100% { left: calc(100% - 4px); opacity: 0; }
+  }
+
+  /* Connector color variants */
+  .conn-1 { --from: rgba(255,255,255,0.3); --to: rgba(253,212,72,0.5); }
+  .conn-1 .pulse-dot { background: #fdd448; box-shadow: 0 0 8px #fdd448, 0 0 16px rgba(253,212,72,0.5); }
+
+  .conn-2 { --from: rgba(253,212,72,0.5); --to: rgba(96,165,250,0.4); }
+  .conn-2 .pulse-dot { background: #ff9b3b; box-shadow: 0 0 8px #ff9b3b, 0 0 16px rgba(255,155,59,0.5); animation-delay: -0.4s; }
+  .conn-2 .pulse-dot:nth-child(2) { animation-delay: -1.2s; }
+  .conn-2 .pulse-dot:nth-child(3) { animation-delay: -2.0s; }
+
+  .conn-3 { --from: rgba(96,165,250,0.4); --to: rgba(74,222,128,0.4); }
+  .conn-3 .pulse-dot { background: #4ade80; box-shadow: 0 0 8px #4ade80, 0 0 16px rgba(74,222,128,0.5); animation-delay: -0.2s; }
+  .conn-3 .pulse-dot:nth-child(2) { animation-delay: -1.0s; }
+  .conn-3 .pulse-dot:nth-child(3) { animation-delay: -1.8s; }
+
+  /* ── STATUS CHIPS ── */
+  .status-chips {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 8px;
+    z-index: 3;
+  }
+  .chip {
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 20px;
+    padding: 5px 12px;
+    font-size: 9px;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    color: rgba(255,255,255,0.45);
+    display: flex;
+    align-items: center;
+    gap: 5px;
+  }
+  .chip-dot {
+    width: 5px; height: 5px;
+    border-radius: 50%;
+  }
+
+  /* ── ANNOTATIONS ── */
+  .annotations {
+    width: 100%;
+    max-width: 620px;
+    background: rgba(255,255,255,0.03);
+    border: 1px solid rgba(255,255,255,0.07);
+    border-radius: 14px;
+    padding: 18px 20px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px 24px;
+  }
+  .ann-item { display: flex; flex-direction: column; gap: 3px; }
+  .ann-label { font-size: 9px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(255,255,255,0.35); }
+  .ann-value { font-size: 12px; color: rgba(255,255,255,0.75); }
+
+  /* confirm button */
+  .confirm-btn {
+    background: linear-gradient(to bottom, #ff9b3b, #f67b14);
+    border: none;
+    border-radius: 30px;
+    padding: 14px 32px;
+    color: white;
+    font-size: 13px;
+    font-weight: 700;
+    cursor: pointer;
+    letter-spacing: 0.04em;
+  }
+  .confirm-btn:hover { opacity: 0.9; }
+</style>
+</head>
+<body>
+
+<h2>Design Mockup — Payment Gateway Hero</h2>
+
+<!-- THE SCENE MOCKUP -->
+<div class="scene">
+  <!-- Ambient glows -->
+  <div class="glow-blob" style="width:300px;height:300px;background:rgba(253,212,72,0.06);top:-80px;left:30%;"></div>
+  <div class="glow-blob" style="width:200px;height:200px;background:rgba(74,222,128,0.05);bottom:-60px;right:10%;"></div>
+  <div class="glow-blob" style="width:180px;height:180px;background:rgba(96,165,250,0.04);bottom:-40px;left:15%;"></div>
+
+  <div class="nodes-row">
+    <!-- MERCHANT -->
+    <div class="node-wrap">
+      <div class="node node-merchant">
+        <div class="node-icon">
+          <i data-lucide="store" style="width:28px;height:28px;"></i>
+        </div>
+      </div>
+      <span class="node-label node-merchant-label">Merchant</span>
+    </div>
+
+    <!-- CONNECTOR 1 -->
+    <div class="connector conn-1" style="margin-top:0;align-self:center;margin-bottom:22px;">
+      <div class="connector-line"></div>
+      <div class="pulse-dot"></div>
+      <div class="pulse-dot"></div>
+    </div>
+
+    <!-- GATEWAY -->
+    <div class="node-wrap">
+      <div class="node node-gateway">
+        <div class="node-icon">
+          <i data-lucide="zap" style="width:30px;height:30px;fill:rgba(253,212,72,0.2);"></i>
+        </div>
+      </div>
+      <span class="node-label node-gateway-label">Gateway</span>
+    </div>
+
+    <!-- CONNECTOR 2 -->
+    <div class="connector conn-2" style="align-self:center;margin-bottom:22px;">
+      <div class="connector-line"></div>
+      <div class="pulse-dot"></div>
+      <div class="pulse-dot"></div>
+    </div>
+
+    <!-- BANK -->
+    <div class="node-wrap">
+      <div class="node node-bank">
+        <div class="node-icon">
+          <i data-lucide="building-2" style="width:28px;height:28px;"></i>
+        </div>
+      </div>
+      <span class="node-label node-bank-label">Bank</span>
+    </div>
+
+    <!-- CONNECTOR 3 -->
+    <div class="connector conn-3" style="align-self:center;margin-bottom:22px;">
+      <div class="connector-line"></div>
+      <div class="pulse-dot"></div>
+      <div class="pulse-dot"></div>
+    </div>
+
+    <!-- APPROVED -->
+    <div class="node-wrap">
+      <div class="node node-approved">
+        <div class="node-icon">
+          <i data-lucide="check-circle-2" style="width:28px;height:28px;"></i>
+        </div>
+      </div>
+      <span class="node-label node-approved-label">Approved</span>
+    </div>
+  </div>
+
+  <!-- Status chips bottom -->
+  <div class="status-chips">
+    <div class="chip">
+      <div class="chip-dot" style="background:#4ade80;box-shadow:0 0 5px #4ade80;"></div>
+      256-bit SSL
+    </div>
+    <div class="chip">
+      <div class="chip-dot" style="background:#fdd448;box-shadow:0 0 5px #fdd448;"></div>
+      BNM Licensed
+    </div>
+    <div class="chip">
+      <div class="chip-dot" style="background:#60a5fa;box-shadow:0 0 5px #60a5fa;"></div>
+      PCI-DSS Compliant
+    </div>
+  </div>
+</div>
+
+<!-- DESIGN ANNOTATIONS -->
+<div class="annotations">
+  <div class="ann-item">
+    <span class="ann-label">Renderer</span>
+    <span class="ann-value">React Three Fiber + Bloom post-processing</span>
+  </div>
+  <div class="ann-item">
+    <span class="ann-label">Nodes</span>
+    <span class="ann-value">4 floating boxes — Merchant, Gateway, Bank, Approved</span>
+  </div>
+  <div class="ann-item">
+    <span class="ann-label">Icons</span>
+    <span class="ann-value">Lucide icons via @react-three/drei Html overlay</span>
+  </div>
+  <div class="ann-item">
+    <span class="ann-label">Data Pulses</span>
+    <span class="ann-value">Animated spheres traveling CatmullRom curved paths</span>
+  </div>
+  <div class="ann-item">
+    <span class="ann-label">Colors</span>
+    <span class="ann-value">Gold gateway hero, blue bank, green approval</span>
+  </div>
+  <div class="ann-item">
+    <span class="ann-label">Animation</span>
+    <span class="ann-value">Nodes gently float up/down, scene subtle auto-rotate</span>
+  </div>
+  <div class="ann-item">
+    <span class="ann-label">Status Chips</span>
+    <span class="ann-value">SSL, BNM Licensed, PCI-DSS float below scene</span>
+  </div>
+  <div class="ann-item">
+    <span class="ann-label">File</span>
+    <span class="ann-value">components/ui/payment-gateway-hero.tsx (new)</span>
+  </div>
+</div>
+
+<p style="font-size:12px;color:rgba(255,255,255,0.3);text-align:center;max-width:500px;">
+  This is a CSS preview of the scene layout. The real component will be fully 3D in Three.js with Bloom glow, depth, and smooth particle animations.
+</p>
+
+<script>
+  lucide.createIcons();
+</script>
+</body>
+</html>

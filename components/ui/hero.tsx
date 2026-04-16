@@ -71,20 +71,20 @@ function HeroSection() {
         <div className="relative z-10 flex w-full flex-col items-center space-y-0">
           <motion.h1
             initial={{ opacity: 0, y: 40 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7 }}
-            className="relative z-30 m-0 p-0 text-[clamp(2.8rem,7vw,88px)] font-black uppercase leading-[0.9] tracking-tighter text-[var(--brand-gold)]"
-            style={{ fontFamily: '"Arial Black", Impact, sans-serif', textShadow: "1px 1px 0 #1a1a0a, 2px 2px 0 #1a1a0a, 3px 3px 0 #1a1a0a, 4px 4px 0 #1a1a0a, 5px 5px 0 #1a1a0a, 6px 6px 0 #1a1a0a" }}>
+            className="relative z-30 m-0 p-0 text-[clamp(2.8rem,7vw,88px)] font-black uppercase leading-[0.9] tracking-tighter text-[var(--brand-amber)]"
+            style={{ fontFamily: '"Arial Black", Impact, sans-serif' }}>
             MALAYSIA&apos;S
           </motion.h1>
           <motion.h1
             initial={{ opacity: 0, y: 50 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, delay: 0.1 }}
-            className="relative z-20 m-0 p-0 text-[clamp(3.2rem,10.5vw,148px)] font-black uppercase leading-[0.9] tracking-tighter text-white"
-            style={{ fontFamily: '"Arial Black", Impact, sans-serif', textShadow: "1px 1px 0 #1a1a0a, 2px 2px 0 #1a1a0a, 3px 3px 0 #1a1a0a, 4px 4px 0 #1a1a0a, 5px 5px 0 #1a1a0a, 6px 6px 0 #1a1a0a, 7px 7px 0 #1a1a0a, 8px 8px 0 #1a1a0a" }}>
+            className="relative z-20 m-0 p-0 text-[clamp(3.2rem,10.5vw,148px)] font-black uppercase leading-[0.9] tracking-tighter text-black"
+            style={{ fontFamily: '"Arial Black", Impact, sans-serif' }}>
             PAYMENT
           </motion.h1>
           <motion.h1
             initial={{ opacity: 0, y: 40 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, delay: 0.2 }}
-            className="relative z-10 m-0 p-0 text-[clamp(1.6rem,5.2vw,72px)] font-black uppercase leading-[0.9] tracking-tighter text-white"
-            style={{ fontFamily: '"Arial Black", Impact, sans-serif', textShadow: "1px 1px 0 #1a1a0a, 2px 2px 0 #1a1a0a, 3px 3px 0 #1a1a0a, 4px 4px 0 #1a1a0a, 5px 5px 0 #1a1a0a, 6px 6px 0 #1a1a0a" }}>
+            className="relative z-10 m-0 p-0 text-[clamp(1.6rem,5.2vw,72px)] font-black uppercase leading-[0.9] tracking-tighter text-black"
+            style={{ fontFamily: '"Arial Black", Impact, sans-serif' }}>
             INFRASTRUCTURE
           </motion.h1>
         </div>
@@ -96,13 +96,13 @@ function HeroSection() {
           className="pointer-events-auto absolute bottom-[5%] left-[-2%] z-30 md:left-[2%]"
         >
           <motion.div animate={{ y: [0, -12, 0] }} transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}>
-            <div className="flex aspect-[3/3.5] w-36 -rotate-6 flex-col items-center justify-center rounded-[2rem] border border-white/25 bg-white/10 p-4 shadow-2xl backdrop-blur-sm transition-transform duration-500 hover:rotate-0 md:w-44">
-              <div className="mb-3 flex h-14 w-14 items-center justify-center rounded-2xl border-[2px] border-white/30 bg-[var(--brand-gold)]/20 md:h-18 md:w-18">
-                <Shield className="h-7 w-7 text-[var(--brand-gold)] md:h-9 md:w-9" />
+            <div className="flex aspect-[3/3.5] w-36 -rotate-6 flex-col items-center justify-center rounded-[2rem] border border-black/10 bg-black/5 p-4 shadow-2xl backdrop-blur-sm transition-transform duration-500 hover:rotate-0 md:w-44">
+              <div className="mb-3 flex h-14 w-14 items-center justify-center rounded-2xl border-[2px] border-black/5 bg-[var(--brand-gold)]/20 md:h-18 md:w-18">
+                <Shield className="h-7 w-7 text-[var(--brand-amber)] md:h-9 md:w-9" />
               </div>
               <div className="mt-1 text-center">
-                <p className="text-xs font-bold text-white md:text-sm">BNM Licensed</p>
-                <p className="mt-1 text-[9px] text-white/60 md:text-[10px]">e-Money & Remittance</p>
+                <p className="text-xs font-bold text-black md:text-sm">BNM Licensed</p>
+                <p className="mt-1 text-[9px] text-black/60 md:text-[10px]">e-Money & Remittance</p>
               </div>
             </div>
           </motion.div>
@@ -114,13 +114,13 @@ function HeroSection() {
           className="pointer-events-auto absolute right-[-2%] top-[8%] z-30 md:right-[2%]"
         >
           <motion.div animate={{ y: [0, -16, 0] }} transition={{ duration: 6, repeat: Infinity, ease: "easeInOut", delay: 1 }}>
-            <div className="flex aspect-[3/3.5] w-36 rotate-6 flex-col items-center justify-center rounded-[2rem] border border-white/25 bg-white/10 p-4 shadow-2xl backdrop-blur-sm transition-transform duration-500 hover:rotate-0 md:w-44">
-              <div className="mb-3 flex h-14 w-14 items-center justify-center rounded-2xl border-[2px] border-white/30 bg-[var(--brand-olive)]/20 md:h-18 md:w-18">
+            <div className="flex aspect-[3/3.5] w-36 rotate-6 flex-col items-center justify-center rounded-[2rem] border border-black/10 bg-black/5 p-4 shadow-2xl backdrop-blur-sm transition-transform duration-500 hover:rotate-0 md:w-44">
+              <div className="mb-3 flex h-14 w-14 items-center justify-center rounded-2xl border-[2px] border-black/5 bg-[var(--brand-olive)]/20 md:h-18 md:w-18">
                 <CreditCard className="h-7 w-7 text-[var(--brand-moss)] md:h-9 md:w-9" />
               </div>
               <div className="mt-1 text-center">
-                <p className="text-xs font-bold text-white md:text-sm">Mastercard</p>
-                <p className="mt-1 text-[9px] text-white/60 md:text-[10px]">Principal issuer</p>
+                <p className="text-xs font-bold text-black md:text-sm">Mastercard</p>
+                <p className="mt-1 text-[9px] text-black/60 md:text-[10px]">Principal issuer</p>
               </div>
             </div>
           </motion.div>
@@ -145,10 +145,10 @@ function HeroSection() {
 function TrustMarquee() {
   const items = ["BNM Licensed", "Mastercard Principal", "PayNet Connected", "20+ Years Experience", "MSC Company", "Shariah Compliant", "LSE Listed (MBO.UK)"];
   return (
-    <section className="relative z-10 w-full overflow-hidden border-y border-white/10 bg-white/[0.03] py-5">
+    <section className="relative z-10 w-full overflow-hidden border-y border-black/5 bg-black/[0.02] py-5">
       <div className="flex animate-[marquee_30s_linear_infinite] gap-12 whitespace-nowrap">
         {[...items, ...items, ...items].map((item, i) => (
-          <span key={i} className="flex items-center gap-3 text-sm font-semibold uppercase tracking-[0.2em] text-white/50">
+          <span key={i} className="flex items-center gap-3 text-sm font-semibold uppercase tracking-[0.2em] text-[var(--muted)]">
             <span className="h-2 w-2 rounded-full bg-[var(--brand-gold)]" />
             {item}
           </span>
@@ -168,13 +168,13 @@ function ThreeDShowcase() {
       <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.7 }}
         className="">
         <div className="grid items-center gap-0 lg:grid-cols-[1fr_1fr]">
-          <div className="relative h-[24rem] overflow-hidden lg:h-[36rem]">
-            <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(253,212,72,0.15),transparent_60%)]" />
+          <div className="relative h-[24rem] overflow-hidden rounded-[2.5rem] border border-black/10 shadow-[0_20px_40px_rgba(0,0,0,0.08)] lg:h-[36rem]">
+            <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(236,194,56,0.15),transparent_60%)]" />
             <FluidGlass mode="bar" scale={0.9} ior={1.15} thickness={8} transmission={1} roughness={0} chromaticAberration={0.05} anisotropy={0.02} />
           </div>
           <div className="flex flex-col gap-6 p-8 md:p-14">
-            <p className="text-xs font-bold uppercase tracking-[0.32em] text-[var(--brand-gold)]">Why MobilityOne</p>
-            <h2 className="font-display text-3xl font-semibold leading-tight text-white md:text-5xl">
+            <p className="text-xs font-bold uppercase tracking-[0.32em] text-[var(--brand-amber)]">Why MobilityOne</p>
+            <h2 className="font-display text-3xl font-semibold leading-tight text-black md:text-5xl">
               20+ years powering Malaysia&apos;s digital payments.
             </h2>
             <p className="max-w-lg text-base leading-7 text-[var(--muted)]">
@@ -187,8 +187,8 @@ function ThreeDShowcase() {
                 { value: "2.3M+", label: "Transactions per year" },
                 { value: "RM192M+", label: "Transaction volume/yr" },
               ].map((stat) => (
-                <div key={stat.label} className="rounded-2xl border border-white/8 bg-white/[0.04] p-4">
-                  <p className="font-display text-2xl font-bold text-[var(--brand-gold)]">{stat.value}</p>
+                <div key={stat.label} className="rounded-2xl border border-black/5 bg-black/[0.03] p-4">
+                  <p className="font-display text-2xl font-bold text-[var(--brand-amber)]">{stat.value}</p>
                   <p className="mt-1 text-xs text-[var(--muted)]">{stat.label}</p>
                 </div>
               ))}
@@ -197,7 +197,7 @@ function ThreeDShowcase() {
               <a href="#payment-gateway" className="inline-flex items-center gap-2 rounded-full bg-[var(--brand-gold)] px-6 py-3 text-sm font-semibold text-black transition hover:bg-[var(--brand-amber)]">
                 Explore solutions <ArrowRight className="h-4 w-4" />
               </a>
-              <a href="#contact" className="inline-flex items-center rounded-full border border-white/15 px-6 py-3 text-sm font-semibold text-white transition hover:border-[var(--brand-gold)]">
+              <a href="#contact" className="inline-flex items-center rounded-full border border-black/15 px-6 py-3 text-sm font-semibold text-black transition hover:border-black/30">
                 Business enquiry
               </a>
             </div>
@@ -251,7 +251,7 @@ function FeatureCards() {
             <h3 className="text-lg font-black uppercase leading-tight">PAYMENT<br />GATEWAY</h3>
             <p className="mt-2 text-[11px] text-black/60">Online & mobile payment gateway with FPX, cards, and eWallet integration.</p>
             <div className="mt-auto pt-4">
-              <div className="flex items-center rounded-full bg-[var(--background)] p-1.5 text-white shadow-lg">
+              <div className="flex items-center rounded-full bg-black p-1.5 text-white shadow-lg">
                 <div className="rounded-full bg-white/20 px-3 py-1.5 text-xs font-bold">525K+</div>
                 <div className="px-3 text-[10px] font-bold">Daily transactions</div>
               </div>
@@ -268,7 +268,7 @@ function FeatureCards() {
             <h3 className="text-lg font-black uppercase leading-tight">E-MONEY<br />SOLUTION</h3>
             <p className="mt-2 text-[11px] text-black/60">BNM-approved e-Wallet platform with DuitNow QR, card-based & mobile app capabilities.</p>
             <div className="mt-auto pt-4">
-              <div className="rounded-2xl bg-[var(--brand-gold)] px-4 py-2.5 text-center shadow-md">
+              <div className="rounded-2xl bg-[var(--brand-amber)] px-4 py-2.5 text-center shadow-md text-black">
                 <p className="text-[9px] font-bold uppercase">7+ white-label partners</p>
                 <p className="text-sm font-black">LIVE</p>
               </div>
@@ -317,9 +317,9 @@ function Licenses() {
       <div className="relative z-10 mx-auto max-w-7xl">
         <div className="mb-16 flex flex-col items-center text-center">
           <p className="text-xs font-bold uppercase tracking-[0.32em] text-[var(--brand-gold)]">Regulated & Trusted</p>
-          <h2 className="mx-auto mt-6 max-w-4xl text-4xl font-black uppercase leading-tight text-white md:text-6xl"
+          <h2 className="mx-auto mt-6 max-w-4xl text-4xl font-black uppercase leading-tight text-black md:text-6xl"
             style={{ fontFamily: '"Arial Black", Impact, sans-serif' }}>
-            LICENSED BY <span className="text-[var(--brand-gold)]">BNM</span> &<br />MASTERCARD
+            LICENSED BY <span className="text-[var(--brand-amber)]">BNM</span> &<br />MASTERCARD
           </h2>
           <p className="mx-auto mt-6 max-w-2xl text-base leading-7 text-[var(--muted)]">
             MobilityOne holds multiple regulatory approvals and licenses, ensuring every transaction meets the highest standards of compliance and security.
@@ -334,12 +334,12 @@ function Licenses() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.3 }}
               transition={{ duration: 0.5, delay: index * 0.08 }}
-              className="group rounded-[2rem] border border-white/8 bg-white/[0.04] p-8 backdrop-blur-sm transition-all duration-300 hover:border-[var(--brand-gold)]/30 hover:bg-white/[0.07]"
+              className="group rounded-[2rem] border border-black/5 bg-black/[0.03] p-8 backdrop-blur-sm transition-all duration-300 hover:border-black/10 hover:bg-black/[0.05]"
             >
-              <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-[var(--brand-gold)]/10 text-[var(--brand-gold)] transition-colors group-hover:bg-[var(--brand-gold)]/20">
+              <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-[var(--brand-gold)]/20 text-[var(--brand-amber)] transition-colors group-hover:bg-[var(--brand-gold)]/30">
                 <Icon className="h-6 w-6" />
               </div>
-              <h3 className="mt-6 font-display text-lg font-bold text-white">{title}</h3>
+              <h3 className="mt-6 font-display text-lg font-bold text-black">{title}</h3>
               <p className="mt-3 text-sm leading-7 text-[var(--muted)]">{desc}</p>
             </motion.div>
           ))}
@@ -366,9 +366,9 @@ function BigStats() {
       <div className="relative z-10 mx-auto max-w-7xl">
         <div className="mb-16 text-center">
           <p className="text-xs font-bold uppercase tracking-[0.32em] text-[var(--brand-olive)]">By the numbers</p>
-          <h2 className="mt-6 text-4xl font-black uppercase text-white md:text-6xl"
+          <h2 className="mt-6 text-4xl font-black uppercase text-black md:text-6xl"
             style={{ fontFamily: '"Arial Black", Impact, sans-serif' }}>
-            PROVEN <span className="text-[var(--brand-gold)]">PERFORMANCE</span>
+            PROVEN <span className="text-[var(--brand-amber)]">PERFORMANCE</span>
           </h2>
         </div>
 
@@ -380,10 +380,10 @@ function BigStats() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: i * 0.1 }}
-              className="rounded-[2rem] border border-white/8 bg-white/[0.04] p-8 text-center"
+              className="rounded-[2rem] border border-black/5 bg-black/[0.03] p-8 text-center"
             >
-              <p className="font-display text-5xl font-bold text-[var(--brand-gold)] md:text-6xl">{stat.number}</p>
-              <p className="mt-4 text-lg font-bold text-white">{stat.label}</p>
+              <p className="font-display text-5xl font-bold text-[var(--brand-amber)] md:text-6xl">{stat.number}</p>
+              <p className="mt-4 text-lg font-bold text-black">{stat.label}</p>
               <p className="mt-2 text-sm text-[var(--muted)]">{stat.sub}</p>
             </motion.div>
           ))}
@@ -436,9 +436,9 @@ function Partners() {
       <div className="relative z-10 mx-auto max-w-7xl">
         <div className="mb-16 text-center">
           <p className="text-xs font-bold uppercase tracking-[0.32em] text-[var(--brand-gold)]">Our Clients & Partners</p>
-          <h2 className="mt-6 text-4xl font-black uppercase text-white md:text-6xl"
+          <h2 className="mt-6 text-4xl font-black uppercase text-black md:text-6xl"
             style={{ fontFamily: '"Arial Black", Impact, sans-serif' }}>
-            TRUSTED BY <span className="text-[var(--brand-gold)]">BANKS</span>,<br />TELCOS & ENTERPRISES
+            TRUSTED BY <span className="text-[var(--brand-amber)]">BANKS</span>,<br />TELCOS & ENTERPRISES
           </h2>
           <p className="mx-auto mt-6 max-w-2xl text-base leading-7 text-[var(--muted)]">
             Major Malaysian banks, all leading telcos, remittance partners, and white-label platforms trust MobilityOne to power their payment infrastructure.
@@ -450,9 +450,19 @@ function Partners() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.7 }}
-          className="overflow-hidden rounded-[2.5rem] border border-white/10 bg-white/[0.03]"
+          className="overflow-hidden rounded-[2.5rem] border border-black/5 bg-black/[0.02]"
         >
-          <ThreeDMarquee images={partnerLogos} className="h-[500px] md:h-[600px]" />
+          <div className="flex flex-wrap items-center justify-center gap-x-8 gap-y-10 p-10 md:gap-x-12 md:gap-y-14 md:p-16">
+            {partnerLogos.map((src, idx) => (
+              <div key={idx} className="group flex h-10 w-24 items-center justify-center transition-transform duration-300 hover:scale-110 sm:h-12 sm:w-28 md:h-16 md:w-36">
+                <img 
+                  src={src} 
+                  alt={`Partner ${idx}`} 
+                  className="max-h-full max-w-full object-contain opacity-50 grayscale transition-all duration-300 group-hover:opacity-100 group-hover:grayscale-0" 
+                />
+              </div>
+            ))}
+          </div>
         </motion.div>
       </div>
     </section>
@@ -493,9 +503,9 @@ function PlatformCapabilities() {
       <div className="relative z-10 mx-auto max-w-7xl">
         <div className="mb-20 text-center">
           <p className="text-xs font-bold uppercase tracking-[0.32em] text-[var(--brand-gold)]">Deep Dive</p>
-          <h2 className="mt-6 text-4xl font-black uppercase text-white md:text-6xl"
+          <h2 className="mt-6 text-4xl font-black uppercase text-black md:text-6xl"
             style={{ fontFamily: '"Arial Black", Impact, sans-serif' }}>
-            OUR <span className="text-[var(--brand-gold)]">SOLUTIONS</span> IN DETAIL
+            OUR <span className="text-[var(--brand-amber)]">SOLUTIONS</span> IN DETAIL
           </h2>
         </div>
 
@@ -514,11 +524,11 @@ function PlatformCapabilities() {
                   <cap.icon className="h-4 w-4 text-[var(--brand-gold)]" />
                   <span className="text-xs font-bold uppercase tracking-wider text-[var(--brand-gold)]">{cap.tag}</span>
                 </div>
-                <h3 className="font-display text-3xl font-bold text-white md:text-4xl">{cap.title}</h3>
+                <h3 className="font-display text-3xl font-bold text-black md:text-4xl">{cap.title}</h3>
                 <p className="mt-4 max-w-xl text-base leading-7 text-[var(--muted)]">{cap.desc}</p>
                 <ul className="mt-8 grid grid-cols-1 gap-3 sm:grid-cols-2">
                   {cap.features.map((f) => (
-                    <li key={f} className="flex items-center gap-3 text-sm text-white/80">
+                    <li key={f} className="flex items-center gap-3 text-sm text-black/80">
                       <CheckCircle2 className="h-4 w-4 flex-shrink-0 text-[var(--brand-gold)]" />
                       {f}
                     </li>
@@ -526,8 +536,8 @@ function PlatformCapabilities() {
                 </ul>
               </div>
               <div className={i % 2 === 1 ? "lg:order-1" : ""}>
-                <div className="relative overflow-hidden rounded-[2.5rem] border border-white/10 bg-white/[0.04] p-1">
-                  <div className="flex aspect-square items-center justify-center rounded-[2.2rem] bg-[radial-gradient(circle_at_center,rgba(253,212,72,0.12),transparent_70%)]">
+                <div className="relative overflow-hidden rounded-[2.5rem] border border-black/5 bg-black/[0.03] p-1">
+                  <div className="flex aspect-square items-center justify-center rounded-[2.2rem] bg-[radial-gradient(circle_at_center,rgba(236,194,56,0.1),transparent_70%)]">
                     <motion.div
                       animate={{ rotate: [0, 360] }}
                       transition={{ duration: 60, repeat: Infinity, ease: "linear" }}
@@ -621,13 +631,13 @@ function LeadershipQuote() {
               <div key={j} className="h-2.5 w-2.5 rounded-full bg-[var(--brand-gold)]" />
             ))}
           </div>
-          <blockquote className="font-display text-2xl font-semibold leading-relaxed text-white md:text-4xl">
+          <blockquote className="font-display text-2xl font-semibold leading-relaxed text-black md:text-4xl">
             &ldquo;Payments and making payments should be made easy for both the payor and payee. Our vision is to smoothen out the complexities and simplify payments.&rdquo;
           </blockquote>
           <div className="mt-8 flex items-center justify-center gap-4">
             <div className="flex h-12 w-12 items-center justify-center rounded-full bg-[var(--brand-gold)]/15 font-bold text-[var(--brand-gold)]">D</div>
             <div className="text-left">
-              <p className="font-bold text-white">Dato Hussian A. Rahman</p>
+              <p className="font-bold text-black">Dato Hussian A. Rahman</p>
               <p className="text-sm text-[var(--muted)]">Founder, MobilityOne</p>
             </div>
           </div>
@@ -653,32 +663,32 @@ function FinalCta() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.7 }}
-          className="overflow-hidden rounded-[2.5rem] border border-white/10 bg-[linear-gradient(135deg,rgba(253,212,72,0.15),rgba(155,168,108,0.1),rgba(255,255,255,0.04))] p-10 text-center md:p-20"
+          className="overflow-hidden rounded-[2.5rem] border border-black/10 bg-[linear-gradient(135deg,rgba(236,194,56,0.1),rgba(155,168,108,0.05),rgba(0,0,0,0.02))] p-10 text-center md:p-20"
         >
           <p className="text-xs font-bold uppercase tracking-[0.32em] text-[var(--brand-gold)]">How can we assist you?</p>
-          <h2 className="mx-auto mt-8 max-w-3xl text-4xl font-black uppercase leading-tight text-white md:text-6xl"
+          <h2 className="mx-auto mt-8 max-w-3xl text-4xl font-black uppercase leading-tight text-black md:text-6xl"
             style={{ fontFamily: '"Arial Black", Impact, sans-serif' }}>
-            LET&apos;S BUILD <span className="text-[var(--brand-gold)]">TOGETHER</span>
+            LET&apos;S BUILD <span className="text-[var(--brand-amber)]">TOGETHER</span>
           </h2>
-          <p className="mx-auto mt-6 max-w-2xl text-base leading-7 text-white/60">
+          <p className="mx-auto mt-6 max-w-2xl text-base leading-7 text-black/60">
             Whether you need payment gateway integration, e-wallet solutions, or remittance infrastructure — our team is ready to help you scale.
           </p>
 
           <div className="mx-auto mt-8 grid max-w-2xl grid-cols-1 gap-4 text-left sm:grid-cols-3">
-            <div className="rounded-2xl border border-white/10 bg-white/[0.05] p-4">
-              <p className="text-xs font-bold text-[var(--brand-gold)]">General Enquiry</p>
-              <p className="mt-1 text-xs text-white/60">+603-9213 0669</p>
-              <p className="text-xs text-white/60">m1enquiry@mobilityone.com.my</p>
+            <div className="rounded-2xl border border-black/10 bg-black/[0.03] p-4">
+              <p className="text-xs font-bold text-[var(--brand-amber)]">General Enquiry</p>
+              <p className="mt-1 text-xs text-[var(--muted)]">+603-9213 0669</p>
+              <p className="text-xs text-[var(--muted)]">m1enquiry@mobilityone.com.my</p>
             </div>
-            <div className="rounded-2xl border border-white/10 bg-white/[0.05] p-4">
-              <p className="text-xs font-bold text-[var(--brand-gold)]">Transactions</p>
-              <p className="mt-1 text-xs text-white/60">+603-8992 0700</p>
-              <p className="text-xs text-white/60">ccc@mobilityone.com.my</p>
+            <div className="rounded-2xl border border-black/10 bg-black/[0.03] p-4">
+              <p className="text-xs font-bold text-[var(--brand-amber)]">Transactions</p>
+              <p className="mt-1 text-xs text-[var(--muted)]">+603-8992 0700</p>
+              <p className="text-xs text-[var(--muted)]">ccc@mobilityone.com.my</p>
             </div>
-            <div className="rounded-2xl border border-white/10 bg-white/[0.05] p-4">
-              <p className="text-xs font-bold text-[var(--brand-gold)]">Business Dev</p>
-              <p className="mt-1 text-xs text-white/60">+603-8996 3600</p>
-              <p className="text-xs text-white/60">bd@mobilityone.com.my</p>
+            <div className="rounded-2xl border border-black/10 bg-black/[0.03] p-4">
+              <p className="text-xs font-bold text-[var(--brand-amber)]">Business Dev</p>
+              <p className="mt-1 text-xs text-[var(--muted)]">+603-8996 3600</p>
+              <p className="text-xs text-[var(--muted)]">bd@mobilityone.com.my</p>
             </div>
           </div>
 
@@ -687,7 +697,7 @@ function FinalCta() {
               className="inline-flex items-center gap-2 rounded-full bg-[var(--brand-gold)] px-8 py-4 text-sm font-bold text-black transition hover:bg-[var(--brand-amber)] hover:shadow-[0_0_40px_rgba(253,212,72,0.4)]">
               Business enquiry <ArrowRight className="h-4 w-4" />
             </a>
-            <a href="#solutions" className="rounded-full border border-white/15 px-8 py-4 text-sm font-semibold text-white transition hover:border-[var(--brand-gold)]">
+            <a href="#solutions" className="rounded-full border border-black/15 px-8 py-4 text-sm font-semibold text-black transition hover:border-black/30">
               View solutions
             </a>
           </div>
@@ -710,7 +720,7 @@ export function Component() {
   return (
     <div className="relative flex min-h-screen w-full flex-col overflow-hidden font-sans selection:bg-[var(--brand-gold)] selection:text-black">
       {/* Background grid */}
-      <div className="pointer-events-none fixed inset-0 z-0 bg-[linear-gradient(to_right,#ffffff08_1px,transparent_1px),linear-gradient(to_bottom,#ffffff08_1px,transparent_1px)] bg-[size:4rem_4rem]" />
+      <div className="pointer-events-none fixed inset-0 z-0 bg-[linear-gradient(to_right,#00000008_1px,transparent_1px),linear-gradient(to_bottom,#00000008_1px,transparent_1px)] bg-[size:4rem_4rem]" />
 
       {/* Ambient glows */}
       <div className="pointer-events-none absolute -left-32 top-0 h-[600px] w-[600px] rounded-full bg-[var(--brand-gold)]/15 blur-[120px]" />

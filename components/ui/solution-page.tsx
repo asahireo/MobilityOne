@@ -74,11 +74,11 @@ function PageHero({ data }: { data: SolutionPageData }) {
             variants={stagger.item}
             className="mb-8 flex items-center gap-2 text-xs text-[var(--muted)]"
           >
-            <Link href="/" className="transition hover:text-white">Home</Link>
+            <Link href="/" className="transition hover:text-black">Home</Link>
             <span>/</span>
-            <Link href="/#solutions" className="transition hover:text-white">Solutions</Link>
+            <Link href="/#solutions" className="transition hover:text-black">Solutions</Link>
             <span>/</span>
-            <span className="text-white">{data.tag}</span>
+            <span className="text-black">{data.tag}</span>
           </motion.nav>
 
           <motion.p
@@ -90,11 +90,11 @@ function PageHero({ data }: { data: SolutionPageData }) {
 
           <motion.h1
             variants={stagger.item}
-            className="mt-5 text-4xl font-black uppercase leading-[1.05] text-white md:text-5xl lg:text-6xl"
+            className="mt-5 text-4xl font-black uppercase leading-[1.05] text-black md:text-5xl lg:text-6xl"
             style={{ fontFamily: '"Arial Black", Impact, sans-serif' }}
           >
             {data.headline}{" "}
-            <span className="text-[var(--brand-gold)]">{data.headlineAccent}</span>
+            <span className="text-[var(--brand-amber)]">{data.headlineAccent}</span>
           </motion.h1>
 
           <motion.p
@@ -117,7 +117,7 @@ function PageHero({ data }: { data: SolutionPageData }) {
                 href={data.externalLink.href}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group inline-flex items-center gap-2 rounded-full border border-white/15 px-8 py-4 text-sm font-semibold text-white transition-all duration-300 hover:border-[var(--brand-gold)]/60 hover:bg-white/[0.04]"
+                className="group inline-flex items-center gap-2 rounded-full border border-black/15 px-8 py-4 text-sm font-semibold text-black transition-all duration-300 hover:border-black/30 hover:bg-black/[0.04]"
               >
                 {data.externalLink.label}
                 <ArrowUpRight className="h-4 w-4 transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
@@ -176,7 +176,7 @@ function PageHero({ data }: { data: SolutionPageData }) {
             <motion.div
               animate={{ y: [0, -10, 0] }}
               transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
-              className="relative overflow-hidden rounded-[2.5rem] border border-white/10 bg-white/[0.04] shadow-[0_40px_80px_rgba(0,0,0,0.5)]"
+              className="relative overflow-hidden rounded-[2.5rem] border border-black/10 bg-black/[0.03] shadow-[0_40px_80px_rgba(0,0,0,0.1)]"
             >
               <div className="relative aspect-[4/3] overflow-hidden rounded-[2.4rem]">
                 <Image
@@ -195,10 +195,10 @@ function PageHero({ data }: { data: SolutionPageData }) {
               initial={{ opacity: 0, scale: 0.8 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.5, delay: 0.8 }}
-              className="absolute -bottom-4 -right-4 rounded-2xl border border-[var(--brand-gold)]/20 bg-[var(--background)] px-5 py-3 shadow-xl backdrop-blur-sm"
+              className="absolute -bottom-4 -right-4 rounded-2xl border border-[var(--brand-gold)]/20 bg-[var(--surface)] px-5 py-3 shadow-xl backdrop-blur-sm"
             >
-              <p className="text-xs font-semibold text-[var(--brand-gold)] uppercase tracking-wider">BNM Licensed</p>
-              <p className="mt-0.5 text-[10px] text-white/40">Bank Negara Malaysia</p>
+              <p className="text-xs font-semibold text-[var(--brand-amber)] uppercase tracking-wider">BNM Licensed</p>
+              <p className="mt-0.5 text-[10px] text-black/40">Bank Negara Malaysia</p>
             </motion.div>
           </motion.div>
         )}
@@ -382,7 +382,7 @@ function Partners({ partners }: { partners: { label: string; names: string[] } }
               initial={{ opacity: 0, scale: 0.9 }}
               animate={inView ? { opacity: 1, scale: 1 } : {}}
               transition={{ duration: 0.35, delay: 0.25 + i * 0.06 }}
-              className="rounded-full border border-white/10 bg-white/[0.04] px-6 py-2.5 text-sm font-semibold text-white/80 transition duration-300 hover:border-[var(--brand-gold)]/30 hover:bg-[var(--brand-gold)]/5 hover:text-white"
+              className="rounded-full border border-black/10 bg-black/[0.03] px-6 py-2.5 text-sm font-semibold text-[var(--muted)] transition duration-300 hover:border-black/20 hover:bg-black/[0.05] hover:text-black"
             >
               {name}
             </motion.span>
@@ -418,10 +418,10 @@ function WhitelabelPartners({ items }: { items: SolutionPartner[] }) {
             initial={{ opacity: 0, y: 16 }}
             animate={inView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.5, delay: 0.1 }}
-            className="mt-6 text-4xl font-black uppercase text-white md:text-5xl"
+            className="mt-6 text-4xl font-black uppercase text-black md:text-5xl"
             style={{ fontFamily: '"Arial Black", Impact, sans-serif' }}
           >
-            {items.length}+ PARTNERS <span className="text-[var(--brand-gold)]">LIVE</span>
+            {items.length}+ PARTNERS <span className="text-[var(--brand-amber)]">LIVE</span>
           </motion.h2>
         </div>
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
@@ -432,11 +432,11 @@ function WhitelabelPartners({ items }: { items: SolutionPartner[] }) {
               animate={inView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.5, delay: i * 0.07 }}
               whileHover={{ y: -4, transition: { duration: 0.2 } }}
-              className="group relative overflow-hidden rounded-[1.5rem] border border-white/8 bg-white/[0.04] p-6 transition-colors duration-300 hover:border-[var(--brand-gold)]/20 hover:bg-white/[0.07]"
+              className="group relative overflow-hidden rounded-[1.5rem] border border-black/5 bg-black/[0.03] p-6 transition-colors duration-300 hover:border-black/15 hover:bg-black/[0.05]"
             >
               {/* Left accent */}
-              <div className="absolute inset-y-0 left-0 w-0.5 bg-gradient-to-b from-[var(--brand-gold)]/0 via-[var(--brand-gold)]/40 to-[var(--brand-gold)]/0 opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
-              <h3 className="text-base font-bold text-white">{p.name}</h3>
+              <div className="absolute inset-y-0 left-0 w-0.5 bg-gradient-to-b from-[var(--brand-amber)]/0 via-[var(--brand-amber)]/40 to-[var(--brand-amber)]/0 opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
+              <h3 className="text-base font-bold text-black">{p.name}</h3>
               {p.description && (
                 <p className="mt-2 text-xs leading-5 text-[var(--muted)]">{p.description}</p>
               )}
@@ -465,7 +465,7 @@ function WhitelabelPartners({ items }: { items: SolutionPartner[] }) {
 export function SolutionPage({ data }: { data: SolutionPageData }) {
   return (
     <div className="relative flex min-h-screen w-full flex-col overflow-hidden font-sans selection:bg-[var(--brand-gold)] selection:text-black">
-      <div className="pointer-events-none fixed inset-0 z-0 bg-[linear-gradient(to_right,#ffffff08_1px,transparent_1px),linear-gradient(to_bottom,#ffffff08_1px,transparent_1px)] bg-[size:4rem_4rem]" />
+      <div className="pointer-events-none fixed inset-0 z-0 bg-[linear-gradient(to_right,#00000008_1px,transparent_1px),linear-gradient(to_bottom,#00000008_1px,transparent_1px)] bg-[size:4rem_4rem]" />
       <div className="pointer-events-none absolute -left-32 top-0 h-[600px] w-[600px] rounded-full bg-[var(--brand-gold)]/15 blur-[120px]" />
       <div className="pointer-events-none absolute -right-32 top-40 h-[500px] w-[500px] rounded-full bg-[var(--brand-olive)]/20 blur-[120px]" />
 

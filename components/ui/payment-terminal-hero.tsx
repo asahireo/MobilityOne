@@ -83,8 +83,13 @@ export function PaymentTerminalHero() {
     if (!orderText.trim()) return;
     setIsProcessing(true);
     setError(null);
-    setIsPrinted(false);
-    await new Promise((r) => setTimeout(r, 600));
+    if (isPrinted) {
+      setIsPrinted(false);
+      await new Promise((r) => setTimeout(r, 1100)); // Wait for full retraction
+    } else {
+      await new Promise((r) => setTimeout(r, 600));
+    }
+
     try {
       const data = await generateReceipt(orderText);
       setReceiptData(data);
@@ -103,32 +108,14 @@ export function PaymentTerminalHero() {
       <div className="pointer-events-none absolute bottom-6 left-[55%] h-[80px] w-[280px] -translate-x-1/2 rounded-full bg-[#fdd448]/12 blur-[55px]" />
 
       {/* Perspective wrapper */}
-      <div style={{ perspective: "1300px" }}>
+      <div className="scale-[0.8] origin-center sm:scale-[0.85] md:scale-90" style={{ perspective: "1300px" }}>
         <div
           style={{
             transform: "rotateY(-14deg) rotateX(4deg)",
-            transformStyle: "preserve-3d",
           }}
           className="relative"
         >
-          {/* ── LEFT FACE (depth illusion) ── */}
-          <div
-            className="pointer-events-none absolute left-0 top-[8px] bottom-[8px] w-[10px] origin-left rounded-l-[2.5rem]"
-            style={{
-              transform: "rotateY(-90deg)",
-              background: "linear-gradient(to bottom, #111, #0a0a0a)",
-              boxShadow: "inset -2px 0 6px rgba(0,0,0,0.8)",
-            }}
-          />
 
-          {/* ── BOTTOM FACE (depth illusion) ── */}
-          <div
-            className="pointer-events-none absolute bottom-0 left-[8px] right-[8px] h-[16px] origin-bottom rounded-b-[2.5rem]"
-            style={{
-              transform: "rotateX(-90deg)",
-              background: "#090909",
-            }}
-          />
 
           {/* MAIN FRONT FACE */}
           <div
@@ -350,7 +337,7 @@ export function PaymentTerminalHero() {
                             Processing…
                           </>
                         ) : (
-                          "Parse & Print Receipt"
+                          "Process & Print Receipt"
                         )}
                       </button>
 
@@ -408,11 +395,11 @@ export function PaymentTerminalHero() {
       </div>
 
       {/* BNM badge */}
-      <div className="pointer-events-none absolute -bottom-4 right-[-10px] rounded-[1.75rem] border border-[var(--brand-gold)]/18 bg-[#0a0d08]/92 px-5 py-4 shadow-xl backdrop-blur-sm">
-        <p className="text-xs font-semibold uppercase tracking-[0.24em] text-[var(--brand-gold)]">
+      <div className="pointer-events-none absolute -bottom-4 right-[-10px] rounded-[1.75rem] border border-[var(--brand-gold)]/18 bg-[#ffffff]/92 px-5 py-4 shadow-xl backdrop-blur-sm">
+        <p className="text-xs font-semibold uppercase tracking-[0.24em] text-[var(--brand-amber)]">
           BNM Licensed
         </p>
-        <p className="mt-1 text-[11px] text-white/45">Bank Negara Malaysia</p>
+        <p className="mt-1 text-[11px] text-black/45">Bank Negara Malaysia</p>
       </div>
     </div>
   );

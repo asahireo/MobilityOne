@@ -1,0 +1,124 @@
+<h2>Payment Gateway Hero — Design Direction</h2>
+<p class="subtitle">Which visual best represents MobilityOne's payment gateway on the hero section?</p>
+
+<div class="cards" style="grid-template-columns: 1fr 1fr 1fr;">
+
+  <!-- Option A -->
+  <div class="card" data-choice="a" onclick="toggleSelect(this)">
+    <div class="card-image" style="background:#0d0d0f;padding:20px;min-height:220px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;">
+      <!-- Payment flow nodes -->
+      <div style="display:flex;align-items:center;gap:8px;">
+        <div style="background:#1a1a1c;border:1px solid #fdd448;border-radius:10px;padding:8px 12px;text-align:center;">
+          <div style="font-size:18px;">🏪</div>
+          <div style="color:#fdd448;font-size:9px;font-weight:700;margin-top:4px;">MERCHANT</div>
+        </div>
+        <div style="flex:1;height:1px;background:linear-gradient(to right,#fdd448,#ff9b3b);position:relative;">
+          <div style="position:absolute;top:-3px;left:40%;width:6px;height:6px;border-radius:50%;background:#ff9b3b;box-shadow:0 0 6px #ff9b3b;"></div>
+        </div>
+        <div style="background:#1a1a1c;border:1px solid #ff9b3b;border-radius:10px;padding:8px 12px;text-align:center;">
+          <div style="font-size:18px;">⚡</div>
+          <div style="color:#ff9b3b;font-size:9px;font-weight:700;margin-top:4px;">GATEWAY</div>
+        </div>
+        <div style="flex:1;height:1px;background:linear-gradient(to right,#ff9b3b,#4ade80);position:relative;">
+          <div style="position:absolute;top:-3px;right:40%;width:6px;height:6px;border-radius:50%;background:#4ade80;box-shadow:0 0 6px #4ade80;"></div>
+        </div>
+        <div style="background:#1a1a1c;border:1px solid #4ade80;border-radius:10px;padding:8px 12px;text-align:center;">
+          <div style="font-size:18px;">🏦</div>
+          <div style="color:#4ade80;font-size:9px;font-weight:700;margin-top:4px;">BANK</div>
+        </div>
+      </div>
+      <div style="display:flex;gap:8px;margin-top:6px;">
+        <div style="background:#0a2a1a;border:1px solid #4ade80/30;border-radius:8px;padding:5px 10px;color:#4ade80;font-size:9px;font-weight:700;">✓ APPROVED</div>
+        <div style="background:#1a1208;border:1px solid #fdd448;border-radius:8px;padding:5px 10px;color:#fdd448;font-size:9px;font-weight:700;">RM 18.64</div>
+      </div>
+      <div style="display:flex;gap:6px;margin-top:4px;">
+        <div style="background:#111;border-radius:6px;padding:3px 8px;color:#555;font-size:8px;">Visa</div>
+        <div style="background:#111;border-radius:6px;padding:3px 8px;color:#555;font-size:8px;">DuitNow</div>
+        <div style="background:#111;border-radius:6px;padding:3px 8px;color:#555;font-size:8px;">TNG</div>
+        <div style="background:#111;border-radius:6px;padding:3px 8px;color:#555;font-size:8px;">GrabPay</div>
+      </div>
+    </div>
+    <div class="card-body">
+      <h3>A — 3D Payment Flow</h3>
+      <p>Animated Three.js scene showing the full payment journey: Merchant → Gateway → Bank → Approval. Data pulses flow between nodes in real-time. Highlights the "gateway" concept and network effect. Abstract, technical, premium.</p>
+    </div>
+  </div>
+
+  <!-- Option B -->
+  <div class="card" data-choice="b" onclick="toggleSelect(this)">
+    <div class="card-image" style="background:#0d0d0f;padding:20px;min-height:220px;display:flex;flex-direction:column;align-items:center;justify-content:center;position:relative;">
+      <!-- Floating card + orbiting logos -->
+      <div style="position:relative;width:180px;height:110px;">
+        <!-- Card body -->
+        <div style="position:absolute;inset:0;background:linear-gradient(135deg,#1a1a1c,#2a2a2c);border-radius:14px;border:1px solid rgba(253,212,72,0.3);box-shadow:0 20px 50px rgba(0,0,0,0.7);padding:14px 18px;display:flex;flex-direction:column;justify-content:space-between;">
+          <div style="display:flex;justify-content:space-between;align-items:flex-start;">
+            <div style="font-size:11px;font-weight:700;color:rgba(255,255,255,0.6);">MOBILITYONE</div>
+            <div style="width:22px;height:14px;background:linear-gradient(to right,#d4a017,#f0c040);border-radius:2px;"></div>
+          </div>
+          <div style="font-family:monospace;font-size:11px;letter-spacing:2px;color:rgba(255,255,255,0.8);">•••• •••• •••• 4729</div>
+          <div style="display:flex;justify-content:space-between;align-items:center;">
+            <div style="font-size:8px;color:rgba(255,255,255,0.5);">VALID THRU 12/28</div>
+            <div style="width:26px;height:16px;display:flex;">
+              <div style="width:16px;height:16px;border-radius:50%;background:#eb001b;opacity:0.8;"></div>
+              <div style="width:16px;height:16px;border-radius:50%;background:#f79e1b;opacity:0.8;margin-left:-8px;"></div>
+            </div>
+          </div>
+        </div>
+        <!-- Orbiting payment method dots -->
+        <div style="position:absolute;top:-14px;right:-14px;background:#111;border:1px solid #fdd448;border-radius:8px;padding:4px 7px;font-size:8px;color:#fdd448;font-weight:700;">TNG</div>
+        <div style="position:absolute;bottom:-14px;left:-10px;background:#111;border:1px solid #4ade80;border-radius:8px;padding:4px 7px;font-size:8px;color:#4ade80;font-weight:700;">GrabPay</div>
+        <div style="position:absolute;top:35px;left:-26px;background:#111;border:1px solid #60a5fa;border-radius:8px;padding:4px 7px;font-size:8px;color:#60a5fa;font-weight:700;">DuitNow</div>
+        <div style="position:absolute;top:-12px;left:30px;background:#111;border:1px solid rgba(255,255,255,0.3);border-radius:8px;padding:4px 7px;font-size:8px;color:rgba(255,255,255,0.6);font-weight:700;">Boost</div>
+      </div>
+      <div style="margin-top:12px;display:flex;gap:6px;">
+        <div style="background:#1a1208;border:1px solid #fdd448;border-radius:20px;padding:4px 10px;font-size:8px;color:#fdd448;font-weight:700;">NFC Tap</div>
+        <div style="background:#0a0a0a;border:1px solid rgba(255,255,255,0.15);border-radius:20px;padding:4px 10px;font-size:8px;color:rgba(255,255,255,0.5);">QR Scan</div>
+        <div style="background:#0a0a0a;border:1px solid rgba(255,255,255,0.15);border-radius:20px;padding:4px 10px;font-size:8px;color:rgba(255,255,255,0.5);">Chip</div>
+      </div>
+    </div>
+    <div class="card-body">
+      <h3>B — 3D Floating Card</h3>
+      <p>A stylized payment card rendered in 3D with CSS/WebGL perspective, surrounded by orbiting payment method logos (Visa, TNG, GrabPay, DuitNow…). Glowing connection lines radiate outward. Very visual, product-forward, highlights ecosystem breadth.</p>
+    </div>
+  </div>
+
+  <!-- Option C -->
+  <div class="card" data-choice="c" onclick="toggleSelect(this)">
+    <div class="card-image" style="background:#0d0d0f;padding:20px;min-height:220px;display:flex;flex-direction:column;align-items:center;justify-content:center;">
+      <!-- Enhanced terminal + floating badges -->
+      <div style="position:relative;">
+        <!-- The terminal device -->
+        <div style="background:linear-gradient(160deg,#272728,#111112);border-radius:28px;width:110px;padding:10px;box-shadow:0 30px 60px rgba(0,0,0,0.8);transform:perspective(800px) rotateY(-10deg) rotateX(3deg);">
+          <!-- NFC area -->
+          <div style="background:linear-gradient(145deg,#ff9b3b,#c85e06);border-radius:20px 20px 8px 8px;height:44px;display:flex;align-items:center;justify-content:center;">
+            <div style="font-size:16px;">📶</div>
+          </div>
+          <!-- Screen -->
+          <div style="background:#111;border-radius:6px;margin-top:6px;padding:8px 6px;">
+            <div style="background:#1a2535;border-radius:3px;height:60px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;">
+              <div style="color:#4ade80;font-size:9px;font-weight:700;">✓ APPROVED</div>
+              <div style="color:#fdd448;font-size:10px;font-weight:700;">RM 47.90</div>
+              <div style="color:rgba(255,255,255,0.4);font-size:7px;">TAP CARD TO PAY</div>
+            </div>
+          </div>
+          <!-- Keypad hint -->
+          <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:2px;margin-top:4px;padding:2px;">
+            {[...Array(9)].map((_,i)=>`<div style="background:#1a1a1a;border-radius:3px;height:10px;"></div>`).join('')}
+          </div>
+        </div>
+        <!-- Floating payment logos around terminal -->
+        <div style="position:absolute;top:-10px;right:-30px;background:#111;border:1px solid rgba(255,255,255,0.15);border-radius:8px;padding:3px 7px;font-size:7px;color:rgba(255,255,255,0.6);">Visa</div>
+        <div style="position:absolute;bottom:10px;right:-36px;background:#111;border:1px solid #fdd448;border-radius:8px;padding:3px 7px;font-size:7px;color:#fdd448;">MyDebit</div>
+        <div style="position:absolute;top:20px;left:-36px;background:#111;border:1px solid #60a5fa;border-radius:8px;padding:3px 7px;font-size:7px;color:#60a5fa;">DuitNow</div>
+        <div style="position:absolute;bottom:-10px;left:-16px;background:#111;border:1px solid #4ade80;border-radius:8px;padding:3px 7px;font-size:7px;color:#4ade80;">GrabPay</div>
+      </div>
+    </div>
+    <div class="card-body">
+      <h3>C — Upgraded POS Terminal</h3>
+      <p>Keep the existing phone-based POS terminal concept but rebuild it with more visual depth — richer 3D CSS perspective, animated approval screen, payment method badges floating around the device, and a glowing tap-to-pay interaction. Evolutionary upgrade of the current hero.</p>
+    </div>
+  </div>
+
+</div>
+
+<p class="subtitle" style="margin-top:20px;">Click a card to select your preferred direction. You can also describe what you like or dislike in the terminal.</p>

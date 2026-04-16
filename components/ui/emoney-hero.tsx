@@ -168,7 +168,7 @@ export function EMoneyHero() {
           position: "absolute",
           bottom: -18,
           right: 12,
-          background: "#0d0d0e",
+          background: "#ffffff",
           border: `1.5px solid ${card.accent}55`,
           borderRadius: 12,
           padding: "6px 12px",
@@ -212,7 +212,7 @@ export function EMoneyHero() {
         ].map(({ label, color }) => (
           <span
             key={label}
-            className="rounded-full border border-white/10 bg-white/[0.04] px-3 py-1.5 text-xs font-semibold text-white/50 flex items-center gap-1.5"
+            className="rounded-full border border-black/10 bg-black/[0.03] px-3 py-1.5 text-xs font-semibold text-black/60 flex items-center gap-1.5"
           >
             <span className="w-1.5 h-1.5 rounded-full shrink-0" style={{ background: color, boxShadow: `0 0 5px ${color}` }} />
             {label}
