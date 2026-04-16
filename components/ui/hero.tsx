@@ -168,9 +168,60 @@ function ThreeDShowcase() {
       <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.7 }}
         className="">
         <div className="grid items-center gap-0 lg:grid-cols-[1fr_1fr]">
-          <div className="relative h-[24rem] overflow-hidden rounded-[2.5rem] border border-black/10 shadow-[0_20px_40px_rgba(0,0,0,0.08)] lg:h-[36rem]">
-            <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(236,194,56,0.15),transparent_60%)]" />
-            <FluidGlass mode="bar" scale={0.9} ior={1.15} thickness={8} transmission={1} roughness={0} chromaticAberration={0.05} anisotropy={0.02} />
+          <div className="group relative flex h-[24rem] w-full flex-col overflow-hidden rounded-[2.5rem] border border-black/10 bg-[#FCFCFD] shadow-[0_8px_30px_rgba(0,0,0,0.04)] lg:h-[36rem]">
+            {/* Grid Background */}
+            <div className="absolute inset-0 bg-[linear-gradient(to_right,#00000008_1px,transparent_1px),linear-gradient(to_bottom,#00000008_1px,transparent_1px)] bg-[size:1.5rem_1.5rem]" />
+            <div className="absolute left-0 top-0 h-[300px] w-[300px] rounded-full bg-[var(--brand-gold)]/10 blur-[80px]" />
+
+            {/* Interactive Elements Container */}
+            <div className="absolute inset-0 flex items-center justify-center">
+              
+              {/* Back Card: API Graphic */}
+              <div className="absolute right-[5%] top-[10%] flex h-[180px] w-[240px] flex-col rounded-2xl border border-black/5 bg-white p-4 shadow-xl transition-transform duration-700 ease-out group-hover:-translate-y-4 group-hover:rotate-2 lg:right-[15%] lg:top-[12%]">
+                <div className="mb-3 flex items-center justify-between border-b border-gray-100 pb-2">
+                  <span className="text-[9px] font-bold uppercase tracking-widest text-black/40">API Response</span>
+                  <div className="h-1.5 w-1.5 rounded-full bg-emerald-400" />
+                </div>
+                <div className="font-mono text-[9px] leading-relaxed text-black/60">
+                  <span className="text-purple-600">{"{"}</span><br/>
+                  &nbsp;&nbsp;&quot;status&quot;: <span className="text-emerald-600">&quot;success&quot;</span>,<br/>
+                  &nbsp;&nbsp;&quot;id&quot;: &quot;tx_req_9921&quot;,<br/>
+                  &nbsp;&nbsp;&quot;amount&quot;: <span className="text-blue-600">450.00</span>,<br/>
+                  &nbsp;&nbsp;&quot;currency&quot;: <span className="text-amber-600">&quot;MYR&quot;</span>,<br/>
+                  &nbsp;&nbsp;&quot;secure&quot;: <span className="text-emerald-600">true</span><br/>
+                  <span className="text-purple-600">{"}"}</span>
+                </div>
+              </div>
+
+              {/* Middle Card: MiPAY Mastercard */}
+              <img
+                src="/assets/img/clients/mipay-mastercard.svg"
+                alt="MiPAY Mastercard"
+                className="absolute left-[5%] top-[25%] w-[240px] rounded-2xl shadow-2xl transition-transform duration-700 ease-out group-hover:-translate-x-4 group-hover:-rotate-3 lg:left-[15%]"
+              />
+
+              {/* Front Card: Transaction Success */}
+              <div className="absolute bottom-[25%] right-[15%] flex w-[200px] flex-col items-center rounded-2xl border border-black/5 bg-white/95 p-5 shadow-[0_20px_40px_rgba(0,0,0,0.12)] backdrop-blur-xl transition-transform duration-700 ease-out group-hover:translate-y-2 group-hover:scale-105 lg:right-[25%]">
+                 <div className="mb-3 flex h-12 w-12 items-center justify-center rounded-full bg-emerald-50">
+                    <svg className="h-6 w-6 text-emerald-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="3"><path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7"/></svg>
+                 </div>
+                 <span className="text-[9px] font-bold uppercase tracking-widest text-black/40">Payment Approved</span>
+                 <span className="mt-1 text-2xl font-black tracking-tight text-black">RM 450.00</span>
+                 <div className="mx-auto mt-4 h-1 w-12 rounded-full bg-emerald-400" />
+              </div>
+
+            </div>
+
+            {/* Overlay Gradient for Text readability */}
+            <div className="absolute inset-x-0 bottom-0 h-2/3 bg-gradient-to-t from-white via-white/80 to-transparent" />
+
+            {/* Bottom Content Focus */}
+            <div className="relative z-10 mt-auto flex flex-col p-8 lg:p-10">
+               <h3 className="mb-2 font-display text-3xl font-bold text-black lg:text-4xl">Enterprise Infrastructure</h3>
+               <p className="max-w-md text-sm leading-relaxed text-black/60">
+                  Fully licensed, PCI-DSS compliant payment routing trusted by Top Malaysian institutions. Built for scale, engineered for reliability.
+               </p>
+            </div>
           </div>
           <div className="flex flex-col gap-6 p-8 md:p-14">
             <p className="text-xs font-bold uppercase tracking-[0.32em] text-[var(--brand-amber)]">Why MobilityOne</p>
