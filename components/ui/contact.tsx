@@ -3,7 +3,7 @@
 import { motion } from "motion/react";
 import { ArrowRight, Check, Copy, Download, Headphones, Mail, Phone, Share2 } from "lucide-react";
 import Link from "next/link";
-import { useCallback, useRef, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import Nav from "@/components/ui/nav";
 import Footer from "@/components/ui/footer";
 
@@ -157,6 +157,49 @@ function DepartmentCards() {
 /*  3. OFFICES                                                         */
 /* ------------------------------------------------------------------ */
 
+function MapComponent({ src, title }: { src: string; title: string }) {
+  const [isInView, setIsInView] = useState(false);
+  const mapRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsInView(true);
+          observer.disconnect();
+        }
+      },
+      { rootMargin: "200px" } // Start loading 200px before it comes into view
+    );
+
+    if (mapRef.current) {
+      observer.observe(mapRef.current);
+    }
+
+    return () => observer.disconnect();
+  }, []);
+
+  return (
+    <div ref={mapRef} className="mt-8 overflow-hidden rounded-[1.5rem] border-4 border-[#F0F0F3] shadow-[inset:5px_5px_10px_#cbcecd,inset_-5px_-5px_10px_#ffffff] h-[220px] bg-black/[0.02] flex items-center justify-center">
+      {isInView ? (
+        <iframe
+          src={src}
+          width="100%"
+          height="100%"
+          style={{ border: 0 }}
+          allowFullScreen
+          loading="lazy"
+          referrerPolicy="no-referrer-when-downgrade"
+          title={title}
+          className="opacity-90 grayscale transition-all hover:opacity-100 hover:grayscale-0 animate-in fade-in duration-700"
+        />
+      ) : (
+        <div className="text-[10px] font-bold uppercase tracking-widest text-black/20">Loading Map...</div>
+      )}
+    </div>
+  );
+}
+
 function Offices() {
   return (
     <section className="relative z-20 w-full rounded-t-[2.5rem] bg-[#F0F0F3] px-6 py-16 text-black shadow-[0_-20px_50px_rgba(0,0,0,0.2)] md:rounded-t-[3.5rem] md:px-10 md:py-20">
@@ -186,19 +229,7 @@ function Offices() {
                   {office.address}
                 </p>
               </div>
-              <div className="mt-8 overflow-hidden rounded-[1.5rem] border-4 border-[#F0F0F3] shadow-[inset_5px_5px_10px_#cbcecd,inset_-5px_-5px_10px_#ffffff]">
-                <iframe
-                  src={office.mapSrc}
-                  width="100%"
-                  height="220"
-                  style={{ border: 0 }}
-                  allowFullScreen
-                  loading="lazy"
-                  referrerPolicy="no-referrer-when-downgrade"
-                  title={`Map — ${office.name}`}
-                  className="opacity-90 grayscale transition-all hover:opacity-100 hover:grayscale-0"
-                />
-              </div>
+              <MapComponent src={office.mapSrc} title={`Map — ${office.name}`} />
             </motion.div>
           ))}
         </div>

@@ -16,6 +16,7 @@ import {
   Smartphone,
   Wallet,
 } from "lucide-react";
+import Image from "next/image";
 import FluidGlass from "@/components/ui/fluid-glass";
 import ThreeDMarquee from "@/components/ui/three-d-marquee";
 import Nav from "@/components/ui/nav";
@@ -184,11 +185,13 @@ function ThreeDShowcase() {
                 </div>
               </div>
 
-              {/* Middle Card: MiPAY Mastercard */}
-              <img
-                src={`${process.env.NEXT_PUBLIC_BASE_PATH || ""}/assets/img/clients/mipay-mastercard.svg`}
-                alt="MiPAY Mastercard"
-                className="absolute left-[5%] top-[25%] w-[240px] rounded-2xl shadow-2xl transition-transform duration-700 ease-out group-hover:-translate-x-4 group-hover:-rotate-3 lg:left-[15%]"
+              {/* Middle Card: Mastercard Logo */}
+              <Image
+                src={assetPath("/assets/img/clients/mastercard.png")}
+                alt="Mastercard"
+                width={240}
+                height={150}
+                className="absolute left-[5%] top-[25%] h-auto w-[240px] rounded-2xl shadow-2xl transition-transform duration-700 ease-out group-hover:-translate-x-4 group-hover:-rotate-3 lg:left-[15%]"
               />
 
               {/* Front Card: Transaction Success */}
