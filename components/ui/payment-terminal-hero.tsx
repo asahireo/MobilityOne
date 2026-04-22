@@ -181,7 +181,7 @@ export function PaymentTerminalHero() {
                 <span
                   className="text-[11px] font-black tracking-[0.2em] text-white/80"
                 >
-                  SUNNI P2
+                  SUNMI P2
                 </span>
               </div>
             </div>

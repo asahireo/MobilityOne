@@ -1,5 +1,9 @@
 import type { Metadata } from "next";
 import { SolutionPage, type SolutionPageData } from "@/components/ui/solution-page";
+import { paymentPartnerLogos, solutionPartnerGroups } from "@/lib/site-content";
+
+const reloadTelcoProviders =
+  solutionPartnerGroups.find((group) => group.title === "Reload & Telco Providers")?.partners ?? [];
 
 export const metadata: Metadata = {
   title: "Payment Terminal | MobilityOne",
@@ -15,6 +19,35 @@ const data: SolutionPageData = {
   subtext:
     "Our state-of-the-art payment terminal solution supports a wide range of payment methods, offering your customers a fast, secure, and seamless checkout experience. Fully customizable for retail, restaurants, government, and service-based businesses.",
   heroVariant: "payment-terminal",
+  productDemos: [
+    {
+      eyebrow: "In-store acceptance",
+      title: "Smart Payment Terminal",
+      description:
+        "Counter and mobile terminal acceptance for cards, QR, wallets, bill collection, reloads, and agent banking transactions.",
+      image: "/assets/img/mobilityone-source/terminalAcceptance.png",
+      metrics: ["Cards", "QR", "Wallets", "VAS"],
+      partners: paymentPartnerLogos.slice(1, 5),
+    },
+    {
+      eyebrow: "Merchant operations",
+      title: "Terminal Acceptance Flow",
+      description:
+        "A practical acceptance layer for retail counters, government payment points, bank agents, and recurring collection channels.",
+      image: "/assets/img/mobilityone-source/terminal-sunmi.png",
+      metrics: ["Receipts", "Settlement", "Reconciliation"],
+      partners: paymentPartnerLogos.slice(4, 8),
+    },
+    {
+      eyebrow: "Value added services",
+      title: "Pay Bill and Reload Catalog",
+      description:
+        "OnePay-style product flows connect prepaid reloads, postpaid bills, utilities, entertainment, donations, and other service payments.",
+      image: "/assets/img/mobilityone-source/terminal.png",
+      metrics: ["Bills", "Reload", "Utilities"],
+      partners: reloadTelcoProviders.slice(0, 4),
+    },
+  ],
   features: [
     {
       title: "Universal Card & eWallet Acceptance",
@@ -80,6 +113,9 @@ const data: SolutionPageData = {
       ],
     },
   ],
+  partnerGroups: solutionPartnerGroups.filter(({ title }) =>
+    ["Payment Solution Clients", "Gateway Rails", "Reload & Telco Providers"].includes(title),
+  ),
   partners: {
     label: "Trusted By",
     names: [

@@ -10,6 +10,8 @@ const navLinks = [
   { label: "E-Money", href: "/solutions/e-money" },
   { label: "Remittance", href: "/solutions/remittance" },
   { label: "About", href: "/about" },
+  { label: "Investor Relations", href: "/investor-relations" },
+  { label: "Reload & Pay Bill", href: "/reload-pay-bill" },
 ];
 
 export default function Nav() {
@@ -26,7 +28,7 @@ export default function Nav() {
         />
       </Link>
 
-      <div className="hidden items-center space-x-2 lg:flex">
+      <div className="hidden items-center space-x-2 xl:flex">
         {navLinks.map((item) => (
           <Link key={item.label} href={item.href} className="rounded-full border border-black/10 px-4 py-1.5 text-xs font-semibold text-black transition-colors hover:bg-black/5">
             {item.label}

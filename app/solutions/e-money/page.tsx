@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { SolutionPage, type SolutionPageData } from "@/components/ui/solution-page";
+import { paymentPartnerLogos, solutionPartnerGroups } from "@/lib/site-content";
 
 export const metadata: Metadata = {
   title: "E-Money Solution | MobilityOne",
@@ -15,6 +16,68 @@ const data: SolutionPageData = {
   subtext:
     "Our e-Money platform is fully approved by Mastercard and recognized by Bank Negara Malaysia (BNM). Built to drive financial inclusion, promote digital payments, and support targeted communities through secure, cashless transactions.",
   heroVariant: "e-money",
+  productDemos: [
+    {
+      eyebrow: "Wallet app",
+      title: "White-Label eWallet",
+      description:
+        "A branded mobile wallet stack for QR payments, account balance, transaction history, salary disbursement, and community payment use cases.",
+      image: "/assets/img/mobilityone-source/news3.png",
+      metrics: ["iOS", "Android", "QR"],
+      partners: [
+        { name: "Mastercard", logo: "/assets/img/mobilityone-source/mastercard.png", role: "payment-rail" },
+        { name: "DuitNow QR", logo: "/assets/img/mobilityone-source/duitnow.png", role: "payment-rail" },
+      ],
+    },
+    {
+      eyebrow: "White-label apps",
+      title: "Partner Wallet Screens",
+      description:
+        "Original app banners for OneCENT Plus, MAINS PAY, S4S, and Clicks@Perak from MobilityOne's e-money page.",
+      image: "/assets/img/mobilityone-source/OneCENTPlus_Banner.png",
+      metrics: ["OneCENT Plus", "MAINS PAY", "S4S", "Clicks@Perak"],
+      partners: [
+        { name: "OneCENT Plus", logo: "/assets/img/mobilityone-source/latestlogoonecentred.png", role: "wallet" },
+        { name: "MAINS PAY", logo: "/assets/img/mobilityone-source/mains-logo.png", role: "wallet" },
+      ],
+    },
+    {
+      eyebrow: "Community wallets",
+      title: "State and Partner Wallets",
+      description:
+        "Community e-wallet implementations shown on the MobilityOne e-money page for partner-led payment ecosystems.",
+      image: "/assets/img/mobilityone-source/S4S_Banner.png",
+      metrics: ["Community payments", "Merchant QR", "Partner brand"],
+      partners: [
+        { name: "S4S", logo: "/assets/img/mobilityone-source/s4s.png", role: "wallet" },
+        { name: "Clicks@Perak", logo: "/assets/img/mobilityone-source/main-logo-clicksperak.png", role: "wallet" },
+      ],
+    },
+    {
+      eyebrow: "Platform",
+      title: "Other Whitelabel Programs",
+      description:
+        "Additional whitelabel wallet brands from the original page, including PocketPay, XPAT, OneCall, and related partner programs.",
+      image: "/assets/img/mobilityone-source/ocPlus.png",
+      metrics: ["PocketPay", "XPAT", "OneCall"],
+      partners: [
+        { name: "PocketPay", logo: "/assets/img/mobilityone-source/onescholl.png", role: "wallet" },
+        { name: "XPAT", logo: "/assets/img/mobilityone-source/xpat.png", role: "wallet" },
+      ],
+    },
+    {
+      eyebrow: "Payment rails",
+      title: "e-Money Acceptance",
+      description:
+        "The original e-money page highlights Mastercard approval and DuitNow QR support for card-based and mobile QR payments.",
+      image: "/assets/img/mobilityone-source/Mainspay1.png",
+      metrics: ["Mastercard", "DuitNow QR", "QR payments"],
+      partners: [
+        paymentPartnerLogos[1],
+        { name: "DuitNow QR", logo: "/assets/img/mobilityone-source/duitnow.png", role: "payment-rail" },
+      ],
+    },
+  ],
   features: [
     {
       title: "Card-Based & QR Payments",
@@ -55,37 +118,60 @@ const data: SolutionPageData = {
   ],
   whitelabelPartners: [
     {
+      name: "MiPAY Mastercard",
+      logo: "/assets/img/mobilityone-source/mastercard.png",
+      role: "wallet",
+      description: "MobilityOne's flagship BNM-approved e-money platform and Mastercard principal issuer solution.",
+    },
+    {
       name: "OneCENT Plus",
+      logo: "/assets/img/mobilityone-source/latestlogoonecentred.png",
+      role: "wallet",
       description: "Fresh new look and enhanced mobile app experience with improved UI and exciting new features.",
       url: "https://onecent.my",
     },
     {
       name: "MAINS PAY",
+      logo: "/assets/img/mobilityone-source/mains-logo.png",
+      role: "wallet",
       description: "Initiative by Majlis Agama Islam Negeri Sembilan — payments and fund management for the community.",
     },
     {
       name: "S4S",
+      logo: "/assets/img/mobilityone-source/s4s.png",
+      role: "wallet",
       description: "eWallet for Sabah state — seamless and secure QR-based transactions for registered merchants.",
       url: "https://s4s.my/",
     },
     {
       name: "Clicks@Perak",
+      logo: "/assets/img/mobilityone-source/main-logo-clicksperak.png",
+      role: "wallet",
       description: "Digital payment systems helping build a cashless society in Perak by 2030.",
       url: "https://clicks.perak.my",
     },
     {
       name: "XPAT",
+      logo: "/assets/img/mobilityone-source/xpat.png",
+      role: "wallet",
       description: "Digital wallet solution for expatriates and international workers in Malaysia.",
     },
     {
       name: "PocketPay",
+      logo: "/assets/img/mobilityone-source/onescholl.png",
+      role: "wallet",
       description: "Pocket-friendly digital wallet with secure cashless transactions.",
     },
     {
       name: "OneCall",
+      logo: "/assets/img/mobilityone-source/ocPlus.png",
+      role: "wallet",
       description: "MBP Solutions' branded e-money platform powered by MobilityOne.",
     },
   ],
+  partnerGroups: solutionPartnerGroups.filter(({ title }) =>
+    ["Gateway Rails"].includes(title),
+  ),
 };
 
 export default function EMoneyPage() {

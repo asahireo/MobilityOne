@@ -187,8 +187,8 @@ function ThreeDShowcase() {
 
               {/* Middle Card: Mastercard Logo */}
               <Image
-                src={assetPath("/assets/img/clients/mastercard.png")}
-                alt="Mastercard"
+                src={assetPath("/assets/img/clients/mipay-mastercard.svg")}
+                alt="MiPAY Mastercard"
                 width={240}
                 height={150}
                 className="absolute left-[5%] top-[25%] h-auto w-[240px] rounded-2xl shadow-2xl transition-transform duration-700 ease-out group-hover:-translate-x-4 group-hover:-rotate-3 lg:left-[15%]"

@@ -11,10 +11,10 @@ const CARDS = [
     amount: "RM 84.00",
   },
   {
-    name: "MiPAY eWallet",
+    name: "MiPAY Mastercard",
     number: "•••• •••• •••• 7803",
-    gradient: "linear-gradient(135deg, #0a1a0d 0%, #0d3320 100%)",
-    accent: "#4ade80",
+    gradient: "linear-gradient(135deg, #2d0a0a 0%, #4a0d0d 100%)",
+    accent: "#ef4444",
     amount: "RM 215.50",
   },
   {

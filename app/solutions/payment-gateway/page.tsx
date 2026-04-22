@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { SolutionPage, type SolutionPageData } from "@/components/ui/solution-page";
+import { paymentPartnerLogos, solutionPartnerGroups } from "@/lib/site-content";
 
 export const metadata: Metadata = {
   title: "Payment Gateway | MobilityOne",
@@ -15,6 +16,35 @@ const data: SolutionPageData = {
   subtext:
     "Our online and mobile payment gateway offers a seamless, secure, and versatile solution to manage transactions with ease. Designed to support a wide range of payment channels — enabling your customers to pay in the way that suits them best.",
   heroVariant: "payment-gateway",
+  productDemos: [
+    {
+      eyebrow: "Checkout",
+      title: "M1Pay Payment Gateway",
+      description:
+        "Online checkout acceptance for FPX, credit cards, debit cards, DuitNow QR, e-wallets, and international wallet channels.",
+      image: "/assets/img/mobilityone-source/M1PAY.png",
+      metrics: ["FPX", "Cards", "DuitNow QR"],
+      partners: paymentPartnerLogos.slice(0, 4),
+    },
+    {
+      eyebrow: "Merchant tools",
+      title: "Gateway Operations",
+      description:
+        "Merchant-facing transaction monitoring, payment status visibility, and settlement support for high-volume online merchants.",
+      image: "/assets/img/mobilityone-source/PG_Slide1.png",
+      metrics: ["Transactions", "Settlement", "Reporting"],
+      partners: paymentPartnerLogos.slice(4, 8),
+    },
+    {
+      eyebrow: "Wallet rails",
+      title: "eWallet and QR Acceptance",
+      description:
+        "A broad wallet stack covering Malaysian wallets, Chinese wallet rails, card schemes, QR payments, and online banking.",
+      image: "/assets/img/mobilityone-source/PG_Slide2.png",
+      metrics: ["Wallets", "QR", "Cross-border"],
+      partners: paymentPartnerLogos.slice(8, 12),
+    },
+  ],
   features: [
     {
       title: "Online Banking via FPX",
@@ -67,6 +97,9 @@ const data: SolutionPageData = {
     label: "Trusted By",
     names: ["Mobi", "Revenue Monster", "MPHS", "Global"],
   },
+  partnerGroups: solutionPartnerGroups.filter(({ title }) =>
+    ["Gateway Rails", "Payment Gateway Clients"].includes(title),
+  ),
   externalLink: {
     label: "Learn about M1Pay",
     href: "mailto:bd@mobilityone.com.my?subject=M1Pay%20Enquiry",

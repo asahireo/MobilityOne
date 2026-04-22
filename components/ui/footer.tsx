@@ -27,12 +27,15 @@ export default function Footer() {
               <li><Link href="/solutions/payment-gateway" className="transition hover:text-black">Payment Gateway</Link></li>
               <li><Link href="/solutions/e-money" className="transition hover:text-black">E-Money Solution</Link></li>
               <li><Link href="/solutions/remittance" className="transition hover:text-black">Remittance</Link></li>
+              <li><Link href="/reload-pay-bill" className="transition hover:text-black">Reload & Pay Bill</Link></li>
             </ul>
           </div>
           <div>
             <p className="mb-4 text-xs font-bold uppercase tracking-wider text-black">Company</p>
             <ul className="space-y-3 text-sm text-[var(--muted)]">
               <li><Link href="/about" className="transition hover:text-black">About us</Link></li>
+              <li><Link href="/about/mission-vision" className="transition hover:text-black">Mission & Vision</Link></li>
+              <li><Link href="/about/board" className="transition hover:text-black">Board of Directors</Link></li>
               <li><Link href="/investor-relations" className="transition hover:text-black">Investor Relations</Link></li>
               <li><Link href="/news" className="transition hover:text-black">News & Updates</Link></li>
               <li><Link href="/career" className="transition hover:text-black">Career</Link></li>

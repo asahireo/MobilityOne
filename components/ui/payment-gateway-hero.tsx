@@ -5,7 +5,7 @@ import { User, Zap, Building2, CheckCircle, Store } from "lucide-react";
 
 const STEPS = [
   { id: 0, label: "Customer",  sub: "Initiates payment",      icon: User,        color: "#94a3b8" },
-  { id: 1, label: "M1PAY",    sub: "Encrypts & routes",       icon: Zap,         color: "#fdd448" },
+  { id: 1, label: "MiPAY",    sub: "Encrypts & routes",       icon: Zap,         color: "#fdd448" },
   { id: 2, label: "Bank",     sub: "Verifies & authorises",   icon: Building2,   color: "#60a5fa" },
   { id: 3, label: "Approved", sub: "Instant confirmation",    icon: CheckCircle, color: "#4ade80" },
   { id: 4, label: "Merchant", sub: "Settlement received",     icon: Store,       color: "#f472b6" },

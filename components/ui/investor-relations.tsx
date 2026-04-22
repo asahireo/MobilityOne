@@ -5,6 +5,7 @@ import { ArrowRight, ArrowUpRight, ExternalLink } from "lucide-react";
 import Link from "next/link";
 import Nav from "@/components/ui/nav";
 import Footer from "@/components/ui/footer";
+import { investorLandingLinks } from "@/lib/site-content";
 
 const announcements = [
   { date: "24 Mar 2026", title: "Update On Proposed Joint Venture with Super Apps" },
@@ -19,19 +20,6 @@ const announcements = [
   { date: "26 June 2023", title: "New joint venture to explore business opportunities from the Kingdom of Saudi Arabia" },
 ];
 
-const irLinks = [
-  { label: "Announcements", desc: "Latest regulatory announcements on AIM" },
-  { label: "Advisers", desc: "Our nominated adviser and broker details" },
-  { label: "Capital Structure", desc: "Share capital and structure" },
-  { label: "Annual Reports", desc: "Full-year financial results" },
-  { label: "Circulars & Other Reports", desc: "Circulars and shareholder documents" },
-  { label: "Admission Document", desc: "Original AIM admission documentation" },
-  { label: "Article of Association", desc: "Constitutional documents" },
-  { label: "Corporate Governance", desc: "Board and governance structure" },
-  { label: "Restriction on Transfer of Shares", desc: "Share transfer restrictions" },
-  { label: "Rights of Shareholders", desc: "Shareholder rights and protections" },
-];
-
 function PageHero() {
   return (
     <section className="relative z-10 mx-auto w-full max-w-7xl px-6 pb-20 pt-8 md:px-10 md:pb-32 md:pt-16">
@@ -42,14 +30,14 @@ function PageHero() {
         className="flex flex-col items-center text-center"
       >
         <nav className="mb-8 flex items-center gap-2 text-xs text-[var(--muted)]">
-          <Link href="/" className="transition hover:text-white">Home</Link>
+          <Link href="/" className="transition hover:text-black">Home</Link>
           <span>/</span>
-          <span className="text-white">Investor Relations</span>
+          <span className="text-black">Investor Relations</span>
         </nav>
 
         <p className="text-xs font-bold uppercase tracking-[0.32em] text-[var(--brand-gold)]">Investor Relations</p>
         <h1
-          className="mx-auto mt-6 max-w-5xl text-4xl font-bold uppercase tracking-tight leading-tight text-white md:text-6xl lg:text-7xl"
+          className="mx-auto mt-6 max-w-5xl text-4xl font-bold uppercase tracking-tight leading-tight text-black md:text-6xl lg:text-7xl"
         >
           MOBILITYONE <span className="text-[var(--brand-gold)]">LIMITED</span>
         </h1>
@@ -68,7 +56,7 @@ function PageHero() {
           </a>
           <a
             href="mailto:m1enquiry@mobilityone.com.my?subject=Investor%20Relations%20Enquiry"
-            className="inline-flex items-center gap-2 rounded-full border border-white/15 px-8 py-4 text-sm font-semibold text-white transition hover:border-[var(--brand-gold)]"
+            className="inline-flex items-center gap-2 rounded-full border border-black/15 px-8 py-4 text-sm font-semibold text-black transition hover:border-[var(--brand-gold)]"
           >
             IR Enquiry <ArrowRight className="h-4 w-4" />
           </a>
@@ -96,7 +84,7 @@ function StockInfo() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: i * 0.08 }}
-              className="rounded-[2rem] border border-white/8 bg-white/[0.04] p-8 text-center"
+              className="rounded-lg border border-black/10 bg-white p-8 text-center shadow-[0_12px_32px_rgba(0,0,0,0.05)]"
             >
               <p className="font-display text-3xl font-bold text-[var(--brand-gold)]">{item.value}</p>
               <p className="mt-2 text-sm text-[var(--muted)]">{item.label}</p>
@@ -122,26 +110,28 @@ function IrDocuments() {
         </div>
 
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-          {irLinks.map((item, i) => (
+          {investorLandingLinks.map((item, i) => (
             <motion.div
               key={item.label}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.4, delay: i * 0.05 }}
-              className="group flex items-start gap-4 rounded-[1.5rem] border border-gray-100 bg-[#F8F9FA] p-6 transition hover:border-[var(--brand-gold)]/30 hover:bg-[var(--brand-gold)]/5"
+              className="group rounded-lg border border-gray-100 bg-[#F8F9FA] transition hover:border-[var(--brand-gold)]/30 hover:bg-[var(--brand-gold)]/5"
             >
-              <div className="flex-1">
-                <h3 className="font-bold text-black">{item.label}</h3>
-                <p className="mt-1 text-xs text-black/50">{item.desc}</p>
-              </div>
-              <ArrowUpRight className="h-4 w-4 shrink-0 text-[var(--brand-olive)] transition group-hover:text-[var(--brand-amber)]" />
+              <Link href={item.href} className="flex items-start gap-4 p-6">
+                <div className="flex-1">
+                  <h3 className="font-bold text-black">{item.label}</h3>
+                  <p className="mt-1 text-xs text-black/50">{item.desc}</p>
+                </div>
+                <ArrowUpRight className="h-4 w-4 shrink-0 text-[var(--brand-olive)] transition group-hover:text-[var(--brand-amber)]" />
+              </Link>
             </motion.div>
           ))}
         </div>
 
         <p className="mt-8 text-center text-sm text-black/40">
-          Full IR documents are available on the{" "}
+          Source PDFs remain available through MobilityOne&apos;s public archive and the{" "}
           <a
             href="https://www.londonstockexchange.com/stock/MBO/mobilityone-limited"
             target="_blank"
@@ -165,13 +155,13 @@ function Announcements() {
         <div className="mb-12 text-center">
           <p className="text-xs font-bold uppercase tracking-[0.32em] text-[var(--brand-gold)]">Latest</p>
           <h2
-            className="mt-6 text-4xl font-bold uppercase tracking-tight text-white md:text-5xl"
+            className="mt-6 text-4xl font-bold uppercase tracking-tight text-black md:text-5xl"
           >
             ANNOUNCEMENTS
           </h2>
         </div>
 
-        <div className="flex flex-col divide-y divide-white/8">
+        <div className="flex flex-col divide-y divide-black/10 rounded-lg border border-black/10 bg-white shadow-[0_16px_40px_rgba(0,0,0,0.05)]">
           {announcements.map((a, i) => (
             <motion.div
               key={i}
@@ -179,13 +169,13 @@ function Announcements() {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.4, delay: i * 0.04 }}
-              className="group flex items-start justify-between gap-6 py-5 transition hover:bg-white/[0.02] -mx-4 px-4 rounded-2xl"
+              className="group flex items-start justify-between gap-6 px-5 py-5 transition hover:bg-[var(--brand-gold)]/10"
             >
               <div>
                 <p className="text-xs font-semibold text-[var(--brand-gold)]">{a.date}</p>
-                <p className="mt-1 text-sm leading-6 text-white/80 group-hover:text-white">{a.title}</p>
+                <p className="mt-1 text-sm leading-6 text-black/70 group-hover:text-black">{a.title}</p>
               </div>
-              <ArrowUpRight className="mt-1 h-4 w-4 shrink-0 text-white/20 transition group-hover:text-[var(--brand-gold)]" />
+              <ArrowUpRight className="mt-1 h-4 w-4 shrink-0 text-black/25 transition group-hover:text-[var(--brand-gold)]" />
             </motion.div>
           ))}
         </div>

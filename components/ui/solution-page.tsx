@@ -11,6 +11,10 @@ import { GlobeInteractive } from "@/components/ui/globe-interactive";
 import { PaymentGatewayHero } from "@/components/ui/payment-gateway-hero";
 import { PaymentTerminalHero } from "@/components/ui/payment-terminal-hero";
 import { EMoneyHero } from "@/components/ui/emoney-hero";
+import type {
+  Partner,
+  SolutionPartnerGroup as PartnerGroupData,
+} from "@/lib/site-content";
 
 /* ------------------------------------------------------------------ */
 /*  TYPES                                                              */
@@ -26,6 +30,17 @@ export interface SolutionPartner {
   name: string;
   description?: string;
   url?: string;
+  logo?: string;
+  role?: Partner["role"];
+}
+
+export interface SolutionProductDemo {
+  title: string;
+  description: string;
+  image: string;
+  eyebrow?: string;
+  metrics?: string[];
+  partners?: Partner[];
 }
 
 export interface SolutionPageData {
@@ -39,6 +54,8 @@ export interface SolutionPageData {
   heroVariant?: "payment-terminal" | "payment-gateway" | "e-money";
   features: SolutionFeature[];
   partners?: { label: string; names: string[] };
+  partnerGroups?: PartnerGroupData[];
+  productDemos?: SolutionProductDemo[];
   whitelabelPartners?: SolutionPartner[];
   cta?: { label: string; href: string };
   externalLink?: { label: string; href: string };
@@ -350,6 +367,158 @@ function Features({ features }: { features: SolutionFeature[] }) {
 /*  PARTNERS                                                           */
 /* ------------------------------------------------------------------ */
 
+function PartnerLogo({ partner }: { partner: Pick<Partner, "name" | "logo"> }) {
+  return (
+    <div className="flex h-16 items-center justify-center rounded-lg border border-black/10 bg-white px-4 shadow-[0_8px_24px_rgba(0,0,0,0.05)]">
+      {partner.logo ? (
+        <Image
+          src={partner.logo}
+          alt={`${partner.name} logo`}
+          width={120}
+          height={48}
+          className="h-auto max-h-10 w-auto object-contain"
+        />
+      ) : (
+        <span className="text-center text-sm font-bold text-black">{partner.name}</span>
+      )}
+    </div>
+  );
+}
+
+function ProductDemos({ demos }: { demos: SolutionProductDemo[] }) {
+  const ref = useRef<HTMLDivElement>(null);
+  const inView = useInView(ref, { once: true, margin: "-80px" });
+
+  return (
+    <section className="relative w-full bg-white px-6 py-20 text-black md:px-10 md:py-28">
+      <div ref={ref} className="mx-auto max-w-7xl">
+        <div className="mb-12 max-w-3xl">
+          <motion.p
+            initial={{ opacity: 0, y: 10 }}
+            animate={inView ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.5 }}
+            className="text-xs font-bold uppercase tracking-[0.32em] text-[var(--brand-olive)]"
+          >
+            Product Experience
+          </motion.p>
+          <motion.h2
+            initial={{ opacity: 0, y: 16 }}
+            animate={inView ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.5, delay: 0.1 }}
+            className="mt-4 text-4xl font-bold uppercase tracking-tight md:text-5xl"
+          >
+            DEMOS, FLOWS, AND <span className="text-[var(--brand-amber)]">CHANNELS</span>
+          </motion.h2>
+        </div>
+
+        <div className="grid gap-6 lg:grid-cols-3">
+          {demos.map((demo, index) => (
+            <motion.article
+              key={demo.title}
+              initial={{ opacity: 0, y: 28 }}
+              animate={inView ? { opacity: 1, y: 0 } : {}}
+              transition={{ duration: 0.5, delay: index * 0.08 }}
+              className="overflow-hidden rounded-lg border border-black/10 bg-[#F8FAFC] shadow-[0_16px_40px_rgba(0,0,0,0.06)]"
+            >
+              <div className="relative aspect-[4/3] bg-white">
+                <Image
+                  src={demo.image}
+                  alt={demo.title}
+                  fill
+                  className="object-contain p-6"
+                  sizes="(max-width: 1024px) 100vw, 33vw"
+                />
+              </div>
+              <div className="p-6">
+                {demo.eyebrow && (
+                  <p className="text-xs font-bold uppercase tracking-[0.22em] text-[var(--brand-olive)]">
+                    {demo.eyebrow}
+                  </p>
+                )}
+                <h3 className="mt-2 text-xl font-bold uppercase tracking-tight text-black">
+                  {demo.title}
+                </h3>
+                <p className="mt-3 text-sm leading-6 text-black/60">{demo.description}</p>
+                {demo.metrics && demo.metrics.length > 0 && (
+                  <div className="mt-5 flex flex-wrap gap-2">
+                    {demo.metrics.map((metric) => (
+                      <span
+                        key={metric}
+                        className="rounded-lg border border-black/10 bg-white px-3 py-1.5 text-xs font-semibold text-black/65"
+                      >
+                        {metric}
+                      </span>
+                    ))}
+                  </div>
+                )}
+                {demo.partners && demo.partners.length > 0 && (
+                  <div className="mt-5 grid grid-cols-2 gap-3">
+                    {demo.partners.map((partner) => (
+                      <PartnerLogo key={partner.name} partner={partner} />
+                    ))}
+                  </div>
+                )}
+              </div>
+            </motion.article>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function PartnerGroups({ groups }: { groups: PartnerGroupData[] }) {
+  const ref = useRef<HTMLDivElement>(null);
+  const inView = useInView(ref, { once: true, margin: "-80px" });
+  const singleGroup = groups.length === 1;
+
+  return (
+    <section className="relative w-full bg-[var(--background)] px-6 py-16 md:px-10 md:py-20">
+      <div className="pointer-events-none absolute left-1/2 top-0 h-[400px] w-[700px] -translate-x-1/2 rounded-full bg-[var(--brand-gold)]/6 blur-[160px]" />
+      <div ref={ref} className="relative z-10 mx-auto max-w-6xl">
+        <div className="mb-10 text-center">
+          <motion.p
+            initial={{ opacity: 0, y: 10 }}
+            animate={inView ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.5 }}
+            className="text-xs font-bold uppercase tracking-[0.32em] text-[var(--brand-gold)]"
+          >
+            Partner Network
+          </motion.p>
+          <motion.h2
+            initial={{ opacity: 0, y: 16 }}
+            animate={inView ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.5, delay: 0.1 }}
+            className="mx-auto mt-4 max-w-4xl text-4xl font-bold uppercase tracking-tight text-black md:text-5xl"
+          >
+            LOGOS, RAILS, AND <span className="text-[var(--brand-amber)]">PROVIDERS</span>
+          </motion.h2>
+        </div>
+
+        <div className={`grid gap-6 ${singleGroup ? "mx-auto max-w-5xl" : "lg:grid-cols-2"}`}>
+          {groups.map((group, index) => (
+            <motion.section
+              key={group.title}
+              initial={{ opacity: 0, y: 28 }}
+              animate={inView ? { opacity: 1, y: 0 } : {}}
+              transition={{ duration: 0.5, delay: index * 0.08 }}
+              className="rounded-lg border border-black/10 bg-white p-6 shadow-[0_16px_40px_rgba(0,0,0,0.06)]"
+            >
+              <h3 className="text-lg font-bold uppercase tracking-tight text-black">{group.title}</h3>
+              <p className="mt-2 text-sm leading-6 text-black/55">{group.description}</p>
+              <div className={`mt-6 grid grid-cols-2 gap-3 ${singleGroup ? "sm:grid-cols-3" : "sm:grid-cols-2 xl:grid-cols-3"}`}>
+                {group.partners.map((partner) => (
+                  <PartnerLogo key={`${group.title}-${partner.name}`} partner={partner} />
+                ))}
+              </div>
+            </motion.section>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
 function Partners({ partners }: { partners: { label: string; names: string[] } }) {
   const ref = useRef<HTMLDivElement>(null);
   const inView = useInView(ref, { once: true });
@@ -427,10 +596,13 @@ function WhitelabelPartners({ items }: { items: SolutionPartner[] }) {
               animate={inView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.5, delay: i * 0.07 }}
               whileHover={{ y: -4, transition: { duration: 0.2 } }}
-              className="group relative overflow-hidden rounded-[1.5rem] border border-black/5 bg-black/[0.03] p-6 transition-colors duration-300 hover:border-black/15 hover:bg-black/[0.05]"
+              className="group relative overflow-hidden rounded-lg border border-black/5 bg-black/[0.03] p-6 transition-colors duration-300 hover:border-black/15 hover:bg-black/[0.05]"
             >
               {/* Left accent */}
               <div className="absolute inset-y-0 left-0 w-0.5 bg-gradient-to-b from-[var(--brand-amber)]/0 via-[var(--brand-amber)]/40 to-[var(--brand-amber)]/0 opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
+              <div className="mb-5 max-w-40">
+                <PartnerLogo partner={p} />
+              </div>
               <h3 className="text-base font-bold text-black">{p.name}</h3>
               {p.description && (
                 <p className="mt-2 text-xs leading-5 text-[var(--muted)]">{p.description}</p>
@@ -467,6 +639,8 @@ export function SolutionPage({ data }: { data: SolutionPageData }) {
       <Nav />
       <PageHero data={data} />
       <Features features={data.features} />
+      {data.productDemos && <ProductDemos demos={data.productDemos} />}
+      {data.partnerGroups && <PartnerGroups groups={data.partnerGroups} />}
       {data.partners && <Partners partners={data.partners} />}
       {data.whitelabelPartners && <WhitelabelPartners items={data.whitelabelPartners} />}
       <Footer />
